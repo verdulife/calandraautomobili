@@ -1,0 +1,26 @@
+<div class="reveal">
+  <slot />
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitType from "split-type";
+
+  gsap.registerPlugin(ScrollTrigger);
+  const splitType = document.querySelector(".reveal") as any;
+
+  const text = new SplitType(splitType, { types: "chars" });
+
+  gsap.from(text.chars, {
+    scrollTrigger: {
+      trigger: splitType,
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: false,
+    },
+    opacity: 0.2,
+    stagger: 0.1,
+  });
+</script>

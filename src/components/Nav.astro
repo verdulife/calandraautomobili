@@ -1,0 +1,40 @@
+---
+import { routes } from "../routes";
+import Logo from "@icons/Logo.astro";
+import Flag from "@components/Flag.astro";
+---
+
+<nav
+  class="fixed top-0 z-20 flex justify-center w-full pb-20 bg-gradient-to-b from-black via-black/70 to-transparent"
+>
+  <ul
+    class="flex items-center font-medium gap-4 text-gray-400 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-800 [&_a]:transition lg:ml-28"
+  >
+    {
+      routes.map((route, i) => {
+        if (routes.length / 2 === i) {
+          return (
+            <>
+              <picture class="flex flex-col justify-between h-20 mx-8">
+                <Flag />
+                <Logo />
+              </picture>
+
+              <li class="hidden pt-6 lg:flex">
+                <a href={route.slug}>{route.title}</a>
+              </li>
+            </>
+          );
+        }
+
+        return (
+          <li class="hidden pt-6 lg:flex">
+            <a href={route.slug}>{route.title}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<style></style>

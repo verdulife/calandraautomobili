@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Strong from "@components/Strong.astro";
+import Link from "@components/Link.astro";
+import P from "@components/P.astro";
+---
+
+<Layout title="404 | Page not found">
+  <section class="w-full h-full py-32">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      <div class="max-w-screen-sm mx-auto text-center">
+        <h1 class="mb-4 font-extrabold tracking-tight text-7xl">
+          <Strong>404</Strong>
+        </h1>
+        <p
+          class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white"
+        >
+          Something's missing.
+        </p>
+        <P>
+          Sorry, we can't find that page. You'll find lots to explore on the
+          home page.
+        </P>
+
+        <div class="mt-12">
+          <Link href="/">Back to Homepage</Link>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

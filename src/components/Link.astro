@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string;
+  secondary?: boolean;
+}
+
+const { href, secondary } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`px-8 py-4 text-sm transition-colors text-zinc-400 whitespace-nowrap ${
+    !secondary &&
+    "border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black rounded-2xl hover:border-zinc-600"
+  } hover:text-zinc-200`}
+>
+  <slot />
+</a>

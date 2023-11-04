@@ -1,0 +1,21 @@
+---
+interface Props {
+  year: string;
+  image: string;
+}
+
+const { year, image } = Astro.props;
+---
+
+<article class="relative p-3 rounded-xl bg-zinc-800">
+  <img
+    class="bg-white rounded-lg shadow-xl shrink-0 h-80 aspect-video"
+    src={image}
+  />
+
+  <h2
+    class="absolute text-2xl -translate-x-1/2 left-1/2 -bottom-14 lg:text-4xl text-zinc-600"
+  >
+    {year}
+  </h2>
+</article>

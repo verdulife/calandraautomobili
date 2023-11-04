@@ -1,0 +1,17 @@
+---
+import P from "@components/P.astro";
+
+interface Props {
+  year: string;
+}
+
+const { year } = Astro.props;
+---
+
+<article class="flex flex-col items-center gap-4">
+  <h3 class="text-2xl lg:text-4xl text-zinc-600">{year}</h3>
+
+  <P class="text-center text-zinc-300">
+    <slot />
+  </P>
+</article>
