@@ -2,14 +2,14 @@
 import Layout from "@layouts/Layout.astro";
 import Strong from "@components/Strong.astro";
 import P from "@components/P.astro";
-import DateSlide from "@components/DateSlide.astro";
 
 import { dates } from "beginning";
+import Slider from "@components/Slider.astro";
 ---
 
-<Layout title="Calandra Automobili">
+<Layout title="Beginning | Calandra Automobili">
   <section
-    class="flex flex-col items-center w-full py-24 bg-[url('/shades2.png')] bg-no-repeat bg-cover bg-bottom"
+    class="flex flex-col items-center w-full pt-24 md:bg-[url('/shades2.png')] bg-no-repeat bg-cover bg-bottom"
   >
     <header class="flex flex-col gap-20 p-6 pt-20 lg:pt-28">
       <h1
@@ -33,25 +33,9 @@ import { dates } from "beginning";
     </header>
   </section>
 
-  <section class="flex flex-col items-center w-full pt-10 pb-48">
-    <ul
-      class="flex w-full gap-6 overflow-x-auto snap-mandatory snap-x pb-14 scrollbar-hide"
-    >
-      <li class="snap-center shrink-0">
-        <div class="w-4 shrink-0 sm:w-48"></div>
-      </li>
-
-      {
-        dates.map(({ year, image }) => (
-          <li class="snap-center shrink-0">
-            <DateSlide year={year} image={image} />
-          </li>
-        ))
-      }
-
-      <li class="snap-center shrink-0">
-        <div class="w-4 shrink-0 sm:w-48"></div>
-      </li>
-    </ul>
+  <section
+    class="flex flex-col items-center w-full py-10 overflow-hidden md:py-24"
+  >
+    <Slider dates={dates} />
   </section>
 </Layout>

@@ -9,26 +9,40 @@ import Youtube from "@icons/Youtube.astro";
 <footer
   class="flex justify-center w-full bg-gradient-to-r from-transparent from-10% via-zinc-900 to-transparent to-90% pt-[1px] mt-auto"
 >
-  <div class="flex justify-center w-full p-6 bg-black">
-    <div class="flex items-center justify-center w-full max-w-6xl gap-12">
+  <div class="flex justify-center w-full py-12 px-6 md:py-2 md:px-2 bg-black">
+    <div
+      class="flex flex-wrap items-center justify-center w-full max-w-6xl gap-6 md:gap-12"
+    >
       <Logo />
-      <Divider />
-      <aside class="flex items-center grow">
-        <p class="text-sm text-zinc-500">
+
+      <span class="hidden md:flex">
+        <Divider />
+      </span>
+
+      <aside class="flex flex-wrap gap-4 items-center grow">
+        <p class="text-center md:text-left text-sm text-zinc-500">
           Copyright © 2023 Calandra Automobili S.L. 2023 All rights reserved.
           <br />
 
           <a class="transition hover:underline" href="/legal#privacy-policy">
             Privacy Policy</a
-          > | <a class="transition hover:underline" href="/legal#terms-conditions"
+          > | <a
+            class="transition hover:underline"
+            href="/legal#terms-conditions"
             >Terms & Conditions
           </a>
         </p>
 
-        <div class="flex gap-4 ml-auto">
-          <a class="transition opacity-50 hover:opacity-100" href="#"><Instagram /></a>
-          <a class="transition opacity-50 hover:opacity-100" href="#"><Facebook /></a>
-          <a class="transition opacity-50 hover:opacity-100" href="#"><Youtube /></a>
+        <div class="flex gap-4 mr-auto md:mr-0 ml-auto">
+          <a class="transition opacity-50 hover:opacity-100" href="#"
+            ><Instagram /></a
+          >
+          <a class="transition opacity-50 hover:opacity-100" href="#"
+            ><Facebook /></a
+          >
+          <a class="transition opacity-50 hover:opacity-100" href="#"
+            ><Youtube /></a
+          >
         </div>
       </aside>
     </div>

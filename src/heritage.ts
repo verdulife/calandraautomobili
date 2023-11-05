@@ -4,16 +4,8 @@ export const dates = [
     image: "/heritage1.jpg",
   },
   {
-    year: "Meanwhile",
-    image: "/meanwhile.jpg",
-  },
-  {
     year: "2002",
     image: "/heritage2.jpg",
-  },
-  {
-    year: "Meanwhile",
-    image: "/meanwhile.jpg",
   },
   {
     year: "2013",

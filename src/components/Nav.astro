@@ -8,7 +8,7 @@ import Flag from "@components/Flag.astro";
   class="fixed top-0 z-20 flex justify-center w-full pb-20 bg-gradient-to-b from-black via-black/70 to-transparent"
 >
   <ul
-    class="flex items-center font-medium gap-4 text-gray-400 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-800 [&_a]:transition lg:ml-28"
+    class="hidden lg:flex items-center font-medium gap-4 text-gray-400 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-800 [&_a]:transition lg:ml-28"
   >
     {
       routes.map((route, i) => {
@@ -20,7 +20,7 @@ import Flag from "@components/Flag.astro";
                 <Logo />
               </picture>
 
-              <li class="hidden pt-6 lg:flex">
+              <li class="flex pt-6">
                 <a href={route.slug}>{route.title}</a>
               </li>
             </>
@@ -28,13 +28,47 @@ import Flag from "@components/Flag.astro";
         }
 
         return (
-          <li class="hidden pt-6 lg:flex">
+          <li class="flex pt-6">
             <a href={route.slug}>{route.title}</a>
           </li>
         );
       })
     }
   </ul>
+
+  <div class="flex justify-center w-full lg:hidden">
+    <div class="relative flex flex-col w-full px-4 dropdown">
+      <button
+        class="inline-flex justify-center w-full transition duration-150 ease-in-out"
+      >
+        <picture class="flex flex-col justify-between h-20 mx-8">
+          <Flag />
+          <Logo />
+        </picture>
+      </button>
+      <div
+        class="invisible w-full transition-all duration-300 transform scale-95 -translate-y-2 opacity-0 dropdown-menu"
+      >
+        <ul
+          class="absolute left-0 flex flex-col w-full mt-6 border-2 text-zinc-50 bg-black/70 backdrop-blur-lg rounded-xl border-zinc-800"
+        >
+          {
+            routes.map((route, i) => (
+              <li class="flex justify-center w-full p-6 border-b last:border-b-0 border-zinc-950">
+                <a href={route.slug}>{route.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
 
-<style></style>
+<style>
+  .dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    transform: translate(0) scale(1);
+    visibility: visible;
+  }
+</style>

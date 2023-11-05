@@ -18,7 +18,7 @@ const { title } = Astro.props;
 
     <!-- Web assets -->
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -37,6 +37,8 @@ const { title } = Astro.props;
   </body><style is:global>
     :root {
       scroll-behavior: smooth;
+      text-wrap: balance;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .scrollbar-hide::-webkit-scrollbar {
