@@ -1,5 +1,15 @@
+---
+interface Props {
+  left?: boolean;
+}
+
+const { left } = Astro.props;
+---
+
 <p
-  class="max-w-3xl text-lg lg:text-xl font-light leading-normal text-center text-gray-400"
+  class={`max-w-3xl text-lg lg:text-xl font-light leading-normal ${
+    left ? "" : "text-center"
+  } text-gray-400`}
 >
   <slot />
 </p>

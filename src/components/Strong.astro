@@ -1,5 +1,15 @@
+---
+interface Props {
+  green?: boolean;
+}
+
+const { green } = Astro.props;
+---
+
 <strong
-  class="font-normal text-transparent bg-gradient-to-b from-italyred to-italyred/10 bg-clip-text"
+  class={`font-normal text-transparent bg-gradient-to-b ${
+    green ? "from-italygreen to-italygreen/10" : "from-italyred to-italyred/10"
+  } bg-clip-text`}
 >
   <slot />
 </strong>
