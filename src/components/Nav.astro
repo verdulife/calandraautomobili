@@ -9,14 +9,14 @@ import Menu from "@icons/Menu.astro";
   class="fixed top-0 z-20 flex justify-center w-full pb-20 bg-gradient-to-b from-black via-black/70 to-transparent"
 >
   <ul
-    class="hidden lg:flex items-center font-medium gap-4 text-gray-300 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-900 [&_a]:transition lg:ml-28"
+    class="hidden lg:flex items-center font-medium gap-4 text-gray-300 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-700 [&_a]:transition lg:ml-28"
   >
     {
       routes.map((route, i) => {
         if (routes.length / 2 === i) {
           return (
             <>
-              <picture class="flex flex-col justify-between h-20 mx-8">
+              <picture class="flex flex-col justify-between gap-6 mx-8">
                 <Flag />
                 <Logo />
               </picture>
@@ -54,7 +54,7 @@ import Menu from "@icons/Menu.astro";
     >
       {
         routes.map((route, i) => (
-          <li class="flex justify-center w-full border-b last:border-b-0 border-zinc-950">
+          <li class="flex justify-center w-full border-b last:border-b-0 border-zinc-800">
             <a href={route.slug} class="w-full p-6 text-center">
               {route.title}
             </a>
