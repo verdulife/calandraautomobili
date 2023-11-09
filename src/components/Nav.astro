@@ -2,13 +2,14 @@
 import { routes } from "../routes";
 import Logo from "@icons/Logo.astro";
 import Flag from "@components/Flag.astro";
+import Menu from "@icons/Menu.astro";
 ---
 
 <nav
   class="fixed top-0 z-20 flex justify-center w-full pb-20 bg-gradient-to-b from-black via-black/70 to-transparent"
 >
   <ul
-    class="hidden lg:flex items-center font-medium gap-4 text-gray-400 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-800 [&_a]:transition lg:ml-28"
+    class="hidden lg:flex items-center font-medium gap-4 text-gray-300 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-900 [&_a]:transition lg:ml-28"
   >
     {
       routes.map((route, i) => {
@@ -36,39 +37,55 @@ import Flag from "@components/Flag.astro";
     }
   </ul>
 
-  <div class="flex justify-center w-full lg:hidden">
-    <div class="relative flex flex-col w-full px-4 dropdown">
-      <button
-        class="inline-flex justify-center w-full transition duration-150 ease-in-out"
-      >
-        <picture class="flex flex-col justify-between h-20 mx-8">
-          <Flag />
-          <Logo />
-        </picture>
-      </button>
-      <div
-        class="invisible w-full transition-all duration-300 transform scale-95 -translate-y-2 opacity-0 dropdown-menu"
-      >
-        <ul
-          class="absolute left-0 flex flex-col w-full mt-6 border-2 text-zinc-50 bg-black/70 backdrop-blur-lg rounded-xl border-zinc-800"
-        >
-          {
-            routes.map((route, i) => (
-              <li class="flex justify-center w-full p-6 border-b last:border-b-0 border-zinc-950">
-                <a href={route.slug}>{route.title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
+  <div
+    class="relative flex items-start justify-between w-full p-8 text-white lg:hidden shrink-0"
+  >
+    <picture class="z-10">
+      <Logo />
+    </picture>
+
+    <button id="menuBtn" class="z-10">
+      <Menu />
+    </button>
+
+    <ul
+      id="menu"
+      class="absolute left-0 flex flex-col justify-center w-full h-screen text-gray-300 transition-all duration-500 opacity-0 pointer-events-none -top-full bg-black/70 backdrop-blur-lg"
+    >
+      {
+        routes.map((route, i) => (
+          <li class="flex justify-center w-full border-b last:border-b-0 border-zinc-950">
+            <a href={route.slug} class="w-full p-6 text-center">
+              {route.title}
+            </a>
+          </li>
+        ))
+      }
+
+      <picture class="fixed bottom-0 left-0 right-0 z-20">
+        <Flag />
+      </picture>
+    </ul>
   </div>
 </nav>
 
 <style>
-  .dropdown:focus-within .dropdown-menu {
+  .active {
+    top: 0;
     opacity: 1;
-    transform: translate(0) scale(1);
-    visibility: visible;
+    pointer-events: all;
   }
 </style>
+
+<script is:inline>
+  (function () {
+    const menu = document.querySelector("#menu");
+    const menuBtn = document.querySelector("#menuBtn");
+
+    function toggleMenu() {
+      menu.classList.toggle("active");
+    }
+
+    menuBtn.addEventListener("click", toggleMenu);
+  })();
+</script>
