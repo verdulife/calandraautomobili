@@ -10,7 +10,7 @@
   gsap.registerPlugin(ScrollTrigger);
   const splitType = document.querySelector(".reveal") as any;
 
-  const text = new SplitType(splitType, { types: "chars" });
+  const text = new SplitType(splitType, { types: "words,chars" });
 
   gsap.from(text.chars, {
     scrollTrigger: {

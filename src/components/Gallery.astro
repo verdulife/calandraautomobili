@@ -1,0 +1,57 @@
+---
+interface Props {
+  images: Array<string>;
+}
+
+const { images } = Astro.props;
+---
+
+<ul
+  id="slider"
+  class="flex w-full h-full overflow-x-auto snap-mandatory snap-x scrollbar-hide"
+>
+  {
+    images.map((image) => (
+      <li class="w-full h-full snap-center shrink-0">
+        <img class="object-cover w-full h-full" src={image} alt="Inside" />
+      </li>
+    ))
+  }
+</ul>
+
+<div
+  class="absolute z-10 flex p-1 -translate-x-1/2 border-2 rounded-full left-1/2 bottom-10 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black"
+>
+  <button
+    id="prev"
+    class="w-40 py-3 text-sm text-gray-300 transition-colors rounded-full px-7 whitespace-nowrap hover:bg-zinc-700"
+    >PREV</button
+  >
+  <button
+    id="next"
+    class="w-40 py-3 text-sm text-gray-300 transition-colors rounded-full px-7 whitespace-nowrap hover:bg-zinc-700"
+    >NEXT</button
+  >
+</div>
+
+<script is:inline>
+  (function () {
+    const slider = document.querySelector("#slider");
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
+
+    prev.addEventListener("click", () => {
+      slider.scrollBy({
+        left: -slider.firstElementChild.clientWidth,
+        behavior: "smooth",
+      });
+    });
+
+    next.addEventListener("click", () => {
+      slider.scrollBy({
+        left: slider.firstElementChild.clientWidth,
+        behavior: "smooth",
+      });
+    });
+  })();
+</script>
