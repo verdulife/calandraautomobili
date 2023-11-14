@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import P from "@components/P.astro";
 import Strong from "@components/Strong.astro";
 import Link from "@components/Link.astro";
+import Form from "@components/Form.astro";
 ---
 
 <Layout title="Contact | Calandra Automobili">
@@ -25,5 +26,9 @@ import Link from "@components/Link.astro";
       <Link href="#form">PROCEED TO FORM</Link>
       <Link href="mailto:info@calandraautomobili.com" secondary>EMAIL US</Link>
     </main>
+  </section>
+
+  <section id="form" class="flex flex-col items-center w-full py-24">
+    <Form />
   </section>
 </Layout>

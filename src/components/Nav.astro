@@ -16,10 +16,12 @@ import Menu from "@icons/Menu.astro";
         if (routes.length / 2 === i) {
           return (
             <>
-              <picture class="flex flex-col justify-between gap-6 mx-8">
-                <Flag />
-                <Logo />
-              </picture>
+              <li>
+                <picture class="flex flex-col justify-between gap-6 mx-8">
+                  <Flag />
+                  <Logo />
+                </picture>
+              </li>
 
               <li class="flex pt-6">
                 <a href={route.slug}>{route.title}</a>
@@ -62,9 +64,11 @@ import Menu from "@icons/Menu.astro";
         ))
       }
 
-      <picture class="fixed bottom-0 left-0 right-0 z-20">
-        <Flag />
-      </picture>
+      <li>
+        <picture class="fixed bottom-0 left-0 right-0 z-20">
+          <Flag />
+        </picture>
+      </li>
     </ul>
   </div>
 </nav>

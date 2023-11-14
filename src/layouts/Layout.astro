@@ -14,7 +14,7 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, viewport-fit=contain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Web assets -->
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
@@ -24,6 +24,10 @@ const { title } = Astro.props;
 
     <!-- Author -->
     <meta name="author" content="verdu | verdu@live.com" />
+    <meta
+      name="description"
+      content="40 years in Automotive Design. Please welcome Calandra Automobili to a newly revived era of pure sportscars."
+    />
 
     <ViewTransitions />
   </head>
@@ -36,8 +40,6 @@ const { title } = Astro.props;
       <slot />
       <Footer />
     </div>
-  </body>
-
     <style is:global>
       :root {
         scroll-behavior: smooth;
@@ -52,6 +54,15 @@ const { title } = Astro.props;
       .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
+      }
+
+      @supports (padding: max(0px)) {
+        body,
+        header,
+        footer {
+          padding-left: min(0vmin, env(safe-area-inset-left));
+          padding-right: min(0vmin, env(safe-area-inset-right));
+        }
       }
 
       @font-face {
@@ -79,4 +90,5 @@ const { title } = Astro.props;
         font-style: normal;
       }
     </style>
+  </body>
 </html>
