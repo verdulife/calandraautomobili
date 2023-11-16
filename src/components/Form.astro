@@ -94,11 +94,14 @@
 <script>
   const formEl = document.querySelector("form");
 
-  formEl.addEventListener("submit", (ev) => {
+  formEl.addEventListener("submit", async (ev) => {
     ev.preventDefault();
 
     const formData = new FormData(formEl);
+    const data = Object.fromEntries(formData);
 
-    console.log(formData);
+    await fetch("/api/form", {
+      method: "POST",
+    });
   });
 </script>
