@@ -1,9 +1,10 @@
 import type { APIRoute } from "astro";
-import { SMTPClient, Message } from "emailjs";
+import { SMTPClient } from "emailjs";
+import { html } from "lib/email-template";
 
 const client = new SMTPClient({
   user: "verdu@live.com",
-  password: "",
+  password: "88Life@outlook",
   host: "smtp-mail.outlook.com",
   tls: {
     ciphers: "SSLv3",
@@ -16,24 +17,18 @@ export const POST: APIRoute = async ({ request }) => {
 
   const formData = await request.json();
 
-  console.log({ formData });
-
-  const message = new Message({
-    from: "you <verdu@live.com>",
+  const messageObject = {
+    from: "Albert Verdú <verdu@live.com>",
     to: "Albert Kactus <verdukactus@gmail.com>",
-    subject: "testing emailjs",
-    text: "i hope this works",
-    attachment: [
-      {
-        data: "<html>i <i>hope</i> this works!</html>",
-        alternative: true,
-      },
-    ],
-  });
+    subject: `${formData.fullname} has contact you`,
+    text: "Email from website",
+    attachment: {
+      data: html(formData),
+      alternative: true,
+    },
+  };
 
-  client.send(message, (err, message) => {
-    console.log({ err } || { message });
-  });
+  await client.sendAsync(messageObject);
 
   return new Response(
     JSON.stringify({

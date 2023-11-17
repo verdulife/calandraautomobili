@@ -1,10 +1,10 @@
-<form class="flex flex-col w-full max-w-4xl gap-8">
+<form class="flex flex-col w-full max-w-4xl gap-8 px-4">
   <fieldset class="flex flex-col w-full">
     <label class="px-4 font-semibold text-gray-400" for="fullname">
       Fullname
     </label>
     <input
-      class="w-full py-4 text-xl text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none focus:border-gray-300"
+      class="w-full py-4 text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none text-md md:text-xl focus:border-gray-300"
       id="fullname"
       name="fullname"
       type="text"
@@ -13,14 +13,14 @@
     />
   </fieldset>
 
-  <fieldset class="flex gap-4 wfull">
-    <div class="grow">
+  <fieldset class="flex flex-wrap gap-4 wfull">
+    <div class="w-full md:grow">
       <fieldset class="flex flex-col w-full">
         <label class="px-4 font-semibold text-gray-400" for="phone">
           Phone number
         </label>
         <input
-          class="w-full py-4 text-xl text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none focus:border-gray-300"
+          class="w-full py-4 text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none text-md md:text-xl focus:border-gray-300"
           id="phone"
           name="phone"
           type="tel"
@@ -30,12 +30,12 @@
       </fieldset>
     </div>
 
-    <div class="grow">
+    <div class="w-full md:grow">
       <label class="px-4 font-semibold text-gray-400" for="email">
         Email address
       </label>
       <input
-        class="w-full py-4 text-xl text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none focus:border-gray-300"
+        class="w-full py-4 text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none text-md md:text-xl focus:border-gray-300"
         id="email"
         name="email"
         type="email"
@@ -50,7 +50,7 @@
       How have you heard about us?
     </label>
     <select
-      class="w-full py-4 text-xl text-white bg-transparent border-b border-gray-800 outline-none focus:border-gray-300"
+      class="w-full py-4 text-white bg-transparent border-b border-gray-800 outline-none text-md md:text-xl focus:border-gray-300"
       id="referal"
       name="referal"
       required
@@ -68,40 +68,73 @@
       Message
     </label>
     <textarea
-      class="w-full h-32 py-4 text-xl text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none resize-none focus:border-gray-300"
+      class="w-full h-32 py-4 text-lg text-white placeholder-gray-600 bg-transparent border-b border-gray-800 outline-none resize-none md:text-xl focus:border-gray-300"
       id="message"
       name="message"
       placeholder="Your message..."
       required></textarea>
   </fieldset>
 
-  <fieldset class="flex gap-4 wfull">
+  <fieldset
+    class="flex flex-wrap items-center justify-center gap-4 md:justify-start wfull"
+  >
     <button
-      class="px-20 py-4 text-sm text-gray-300 transition-colors border-2 whitespace-nowrap border-zinc-800 bg-gradient-to-t from-zinc-800 to-zinc-900 rounded-2xl hover:border-zinc-700 hover:text-gray-200"
+      class="w-3/4 px-20 py-4 text-sm text-gray-300 transition-colors border-2 md:w-auto whitespace-nowrap border-zinc-800 bg-gradient-to-t from-zinc-800 to-zinc-900 rounded-2xl hover:border-zinc-700 hover:text-gray-200"
       type="submit"
     >
       SEND
     </button>
     <button
-      class="px-8 py-4 text-sm text-gray-300 transition-colors whitespace-nowrap"
+      class="w-3/4 px-8 py-4 text-sm text-gray-300 transition-colors md:w-auto whitespace-nowrap"
       type="reset"
     >
       RESET
     </button>
+
+    <p class="text-gray-400 md:ml-auto" id="response" hidden></p>
   </fieldset>
 </form>
 
 <script>
   const formEl = document.querySelector("form");
+  const responseEl = document.querySelector("#response");
+  const sendEl = document.querySelector("button[type='submit']");
+
+  function showResponse(text: string, reset = false) {
+    responseEl.textContent = text;
+    responseEl.removeAttribute("hidden");
+
+    setTimeout(() => {
+      responseEl.setAttribute("hidden", null);
+      sendEl.removeAttribute("disabled");
+    }, 5000);
+
+    if (reset) formEl.reset();
+  }
 
   formEl.addEventListener("submit", async (ev) => {
     ev.preventDefault();
+    sendEl.setAttribute("disabled", null);
 
     const formData = new FormData(formEl);
     const data = Object.fromEntries(formData);
 
-    await fetch("/api/form", {
+    responseEl.textContent = "Sending...";
+    responseEl.removeAttribute("hidden");
+
+    const res = await fetch("/api/form", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
+
+    if (!res.ok) {
+      showResponse("An error occured. Please try again.");
+      return;
+    }
+
+    showResponse("Thank you for contacting us", true);
   });
 </script>

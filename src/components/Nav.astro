@@ -6,10 +6,10 @@ import Menu from "@icons/Menu.astro";
 ---
 
 <nav
-  class="fixed top-0 z-20 flex justify-center w-full pb-20 bg-gradient-to-b from-black via-black/70 to-transparent"
+  class="fixed top-0 z-20 flex justify-center w-full pb-20 pointer-events-none bg-gradient-to-b from-black via-black/70 to-transparent"
 >
   <ul
-    class="hidden lg:flex items-center font-medium gap-4 text-gray-300 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-700 [&_a]:transition lg:ml-28"
+    class="hidden lg:flex items-center font-medium gap-4 text-gray-300 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-700 [&_a]:transition lg:ml-28 pointer-events-auto"
   >
     {
       routes.map((route, i) => {
@@ -46,7 +46,7 @@ import Menu from "@icons/Menu.astro";
       <Logo />
     </picture>
 
-    <button id="menuBtn" class="z-10">
+    <button id="menuBtn" class="z-10 pointer-events-auto">
       <Menu />
     </button>
 

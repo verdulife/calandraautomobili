@@ -9,11 +9,11 @@ const { title, desc, icon } = Astro.props;
 ---
 
 <article
-  class="max-w-xs flex flex-col items-center gap-4 px-6 border text-white bg-zinc-900 rounded-xl border-zinc-800 break-inside-avoid-column"
+  class="flex flex-col items-center h-full max-w-xs gap-4 px-6 text-white border bg-zinc-900 rounded-xl border-zinc-800 break-inside-avoid-column"
 >
   <h2 class="w-full mt-6 text-xl font-bold">{title}</h2>
   <p class="text-lg font-light">{desc}</p>
-  <picture class="mt-6">
+  <picture class="mt-auto">
     <img src={icon} alt={title} />
   </picture>
 </article>

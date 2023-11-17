@@ -68,6 +68,10 @@ const { title } = Astro.props;
         scrollbar-width: none;
       }
 
+      button:disabled {
+        cursor: not-allowed;
+      }
+
       @supports (padding: max(0px)) {
         body,
         header,
