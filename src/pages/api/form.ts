@@ -1,10 +1,10 @@
 import type { APIRoute } from "astro";
 import { SMTPClient } from "emailjs";
-import { html } from "lib/email-template";
+import { intern, response } from "lib/email-template";
 
 const client = new SMTPClient({
   user: "verdu@live.com",
-  password: "88Life@outlook",
+  password: "",
   host: "smtp-mail.outlook.com",
   tls: {
     ciphers: "SSLv3",
