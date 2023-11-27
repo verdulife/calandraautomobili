@@ -9,6 +9,9 @@ import Divider from "@components/Divider.astro";
 import Reveal from "@components/Reveal.astro";
 
 import { dates } from "lib/family-passion";
+import { Image } from "astro:assets";
+
+import homeCar from "@assets/home-car.jpg";
 ---
 
 <Layout title="Calandra Automobili">
@@ -17,9 +20,7 @@ import { dates } from "lib/family-passion";
       <h1
         class="text-4xl font-normal leading-tight text-center text-white lg:text-6xl"
       >
-        Track-<Strong>focused</Strong> supercar
-        <br />
-         for real <Strong>drivers</Strong>
+        Track <Strong>focused</Strong> sports car
       </h1>
 
       <P>
@@ -35,7 +36,7 @@ import { dates } from "lib/family-passion";
 
     <footer class="-mt-2 -z-10">
       <picture>
-        <img class="max-w-6xl w-[130%]" src="/home-car.jpg" alt="P001" />
+        <Image  src={homeCar} alt="P001" width={1152} height={560} loading="eager" class="max-w-6xl w-[130%]"></Image>
       </picture>
     </footer>
   </section>
@@ -47,15 +48,15 @@ import { dates } from "lib/family-passion";
     <Pretitle>A CHILD WITH A DREAM</Pretitle>
 
     <Reveal>
-      <h2 class="text-xl leading-tight text-white lg:text-2xl">
-        Gaspare Vittorio Calandra has been working in the Automotive industry
-        for over 40 years as a design engineer. He had a dream, build a street
-        legal race car, so he decided to start this journey nearly 22 years ago.
-
-
+      <h2 class="text-xl text-center leading-tight text-white lg:text-2xl">
+        Gaspare Vittorio Calandra, has been working in the automotive industry
+        as a design engineer for over 40 years. From childhood, he had a dream,
+        build a street legal race car, so he decided to realize his dream almost
+        22 years ago.
         <br /><br />
-         He is ready now to say that Calandra has become a new automotive brand
-        to compete with some of the best in the world.
+         Calandra Automobili, has revived an era of pure sports cars and has
+        become a new automotive brand, ready to challenge some of the best in
+        the world .
       </h2>
     </Reveal>
   </section>
@@ -92,4 +93,4 @@ import { dates } from "lib/family-passion";
     <Link href="/beginning">TAKING DREAMS TO REALITY</Link>
   </section>
 </Layout>
-lib/family-passion
+ lib/family-passion

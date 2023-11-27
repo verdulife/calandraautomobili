@@ -1,32 +1,32 @@
 export const cards = [
   {
-    title: "Aerodynamics",
-    desc: "Designed fully in house. Slight  changes have been performed on the GP version. This has been done to achieve the maximum downforce and comfort possible, which has culminated in the perfect track package.",
+    title: "Aerodynamics and Design",
+    desc: "Designed fully in house with the highest detail and refinement lines to be able to achieve the maximum downforce without compromising the styling. Slight changes have been introduced to the GP . This has been done to improve the overall package.",
     icon: "/svg/wind.svg",
   },
   {
-    title: "Suspension, geometry and chassis",
-    desc: "Also designed in house, the calculations gone into the chassis and suspension have been meticulously revised and tested with the P001.",
+    title: "Suspension, Geometry and Chassis",
+    desc: "Also designed in house. The calculations gone into the chassis and suspension have been meticulously revised and tested with the P001. The chassis is a lightweight space frame configuration, to ensuring a balanced weight distribution front to rear, optimum stiffness and safety.",
     icon: "/svg/compass.svg",
   },
   {
     title: "Powertrains",
-    desc: "With 2 V6 3.5L Eco boost engine options that offer 500 and 750hp. Working together with our supplier to extract the maximum result. With a possibility to use a 6-speed manual dog or sequential box.",
+    desc: "Two engine options V6 3.5L Eco boost offering 500Bhp and 750Bhp. The precision and  engineering  that has gone into the engines, is just remarkable. Hours of machining and calibrating race parts has delivered the reliability needed for the most extreme road and track demands. The cooling system has been carefully studied for minimum heat transfer  fueling system outputting the power necessary to efficiently feed the engine.  Possibility to use a 6-speed manual Dog or Sequential gearbox.",
     icon: "/svg/gear.svg",
   },
   {
-    title: "Brakes and rims",
-    desc: 'You can choose a 4 or 6 piston caliper depending on your demands. With a possibility of a 20" rim, we also offer a forged version, while standards are 19',
+    title: "Brakes and Wheels",
+    desc: "The choice of 4 or 6 piston caliper is available depending on demands. Piston size has been crucial to determinate the best option for either road or track use. With standard monoblock aluminium 19” rims, we also offer a forged version for the demanding drivers.",
     icon: "/svg/tire.svg",
   },
   {
     title: "Interior",
-    desc: "Simplicity, high quality and finishing. Detail is extraordinary for both car and track versions. We keep it simple with aluminium buttons, knobs and upholstered in suede dashboard. race seats and a 4-point harness belt, gives you the GT race car feeling.",
+    desc: "Simplistic design with high quality finishing. Detail is extraordinary for both road and track versions. All aluminum buttons and knobs are CNC machined. Trimmed cockpit and surroundings in Alcantara. Race seats and a 4-point harness belt, offers firm occupant support giving you that GT race car feeling.",
     icon: "/svg/glass.svg",
   },
   {
-    title: "The veredict",
-    desc: "The only true GT series race car tuned into a track and road car.",
+    title: "The Veredict",
+    desc: "The only inspired GT series race car that has evolved into a sports car. ",
     icon: "/svg/hammer.svg",
   },
 ];

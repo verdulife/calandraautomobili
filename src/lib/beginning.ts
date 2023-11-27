@@ -1,10 +1,10 @@
 export const dates = [
   {
-    year: "1978",
+    year: "1980",
     image: "/beginning/1.jpg",
   },
   {
-    year: "1991",
+    year: "1993",
     image: "/beginning/2.jpg",
   },
   {
@@ -16,7 +16,7 @@ export const dates = [
     image: "/beginning/4.jpg",
   },
   {
-    year: "2018",
+    year: "2014",
     image: "/beginning/5.jpg",
   },
 ];

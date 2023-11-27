@@ -6,5 +6,4 @@ export const images = [
   "/inside/5.jpg",
   "/inside/6.jpg",
   "/inside/7.jpg",
-  "/inside/8.jpg",
 ];

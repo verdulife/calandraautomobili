@@ -1,12 +1,12 @@
 export const cards = [
   {
-    title: "A pure sports car of its own",
-    desc: "Light weight, high power and extreme handling combined has given the P001 and GP versions an unprecedent level for driving.",
+    title: "A pure sports car",
+    desc: "Light weight, high power and precise handling combined, has given the P001 and GP versions an unprecedented level of driving.",
     icon: "/svg/feather.svg",
   },
   {
     title: "The mission",
-    desc: "Our mission is to deliver our customers with a sportscar that offers an unparallel experience for track and road use.",
+    desc: "Our mission is to deliver to our customers, a sports car which offers an unparalleled experience on road and track.",
     icon: "/svg/road.svg",
   },
   {
@@ -15,18 +15,18 @@ export const cards = [
     icon: "/svg/map.svg",
   },
   {
-    title: "Track and road versions",
-    desc: "Developed together and with the companies only philosophy of sharing a GT series race car with FIA and EU road standards.",
+    title: "Road and track versions",
+    desc: "Both versions are developed with the company’s only philosophy by sharing a GT series sports car with FIA and EU road regulations.",
     icon: "/svg/node.svg",
   },
   {
     title: "Inspiring",
-    desc: "Designed by the owner himself with pure passion and inspiration derived from motorsport, which has become the driving force in developing this sports car.",
+    desc: "Designed by the owner, with pure passion and inspiration derived from motorsport, which has become the driving force in developing this sports car.",
     icon: "/svg/rate.svg",
   },
   {
-    title: "Craftsman ship",
-    desc: "With handmade and bespoke designed parts, we have forged a crucial relation ship with our supplier, and together we can show the world, the result of our of a unique piece of racing.",
+    title: "Craftsmanship",
+    desc: "With handmade and bespoke designed components, we have forged a crucial relationship with our suppliers and together, we can show the world the result of our unique masterpiece.",
     icon: "/svg/wheel.svg",
   },
 ];

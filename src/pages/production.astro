@@ -10,6 +10,9 @@ import Marquee from "@components/Marquee.astro";
 import { cards } from "lib/production";
 import { images } from "lib/production-images";
 import { v1, v2, options } from "lib/versions";
+import { Image } from "astro:assets";
+
+import p001 from "@assets/p001.jpg";
 ---
 
 <Layout title="Heritage | Calandra Automobili">
@@ -45,6 +48,16 @@ import { v1, v2, options } from "lib/versions";
   </section>
 
   <section id="versions" class="flex flex-col justify-center w-full max-w-6xl">
+    <picture class="-mb-20">
+      <Image
+        src={p001}
+        alt="Prototype P001"
+        width={1100}
+        height={493}
+        class="scale-150 md:scale-100"
+      />
+    </picture>
+
     <main class="flex flex-wrap w-full gap-12 lg:justify-center">
       <article class="flex flex-col gap-6 p-8 w-full md:w-[45%]">
         <h3 class="text-4xl text-white">Version 1</h3>
@@ -85,14 +98,6 @@ import { v1, v2, options } from "lib/versions";
         <Marquee items={options} />
         <Marquee items={options} reverse />
       </div>
-
-      <picture class="mt-20 -mb-20">
-        <img
-          class="scale-150 md:scale-100"
-          src="/p001.jpg"
-          alt="Prototype P001"
-        />
-      </picture>
     </footer>
   </section>
 </Layout>

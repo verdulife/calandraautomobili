@@ -1,24 +1,22 @@
 export const dates = [
   {
     year: "1930",
-    desc: `It all began in the 1930s when his father, Pietro Calandra, at the age of 15, was overcome by his passion for motorcycles and speed, which drove him to start a collection of motorcycles. Eventually, in later years, he started participating in local motorcycle hill climb events until the 1950s.`,
+    desc: `It all began in Italy in the 1930's, when, father and grandfather, Pietro Calandra, started a collection of various motorcycles and ultimately competed in hill climb events at an amateur level.`,
   },
   {
     year: "1955",
-    desc: `In 1955, his son, Gaspare Vittorio Calandra, was born. In his very young days, Pietro would take his son to the local race circuit in Cape Town to watch a combination of motorsport events, cars, and motorbikes. Young Gaspare V slowly absorbed what he was seeing and decided that one day he would build his own race cars and also become a race car driver; the latter, he didn't achieve.
-    <br/><br/>
-    Once finished school, he attended university, studying mechanical engineering to gain the knowledge he would require to design and build his own cars. During his studies, he participated as a Formula Ford (FF) mechanic to gain experience and also built models of various (FF) cars and eventually designed his very own (FF) chassis. He always dreamt of being an F1 engineer, but that wasn't an easy choice, so he focused on his career.`,
+    desc: `Gaspare Vittorio Calandra was born. In his early years, his father would take him to the local race circuit in Cape Town to watch a combination of motorsport events, cars and motorbikes. This triggered off his passion for motorsport and so began his interest and obsessive passion for race cars. At the age of 10, his dream was born, where he would imagine seeing himself building and driving the race cars which he saw on the track.`,
   },
   {
-    year: "1975",
-    desc: `After graduating with a Mechanical Engineering Diploma, Gaspare V. Calandra started working for automotive brands such as Bentley, VW, SEAT, BMW, Mercedes, and GM. This journey took him and his family to Europe, the United Kingdom, the United States, and Canada. He finally settled in Spain, where he decided to start his sports car project in 2008.`,
+    year: "1982",
+    desc: `He participated as a formula Ford mechanic while studying is Mechanical Engineering degree to gain understanding and experience of race cars. He also built various wooden models of Formula Ford cars. After graduating in Mechanical Engineering, he designs his own Formula Ford chassis. He finally decides to work as a design engineer for Audi, BMW, GM, VW, SEAT, Mercedes and Bentley.`,
   },
   {
-    year: "1994",
-    desc: `He presented the first prototype at the Spanish Automotive Show in Barcelona in 1995, the Calandra GTR. Funds did not arrive, so the project was put to rest.`,
+    year: "1995",
+    desc: `He presents his first prototype scale model at the Spanish Automotive Show in Barcelona, the Calandra GTR.`,
   },
   {
     year: "2008",
-    desc: `In 2008, with his son, engineer Piero Gaspare Calandra, joining the project, together they achieved what we see today.`,
+    desc: `His son, Piero Gaspare Calandra joins the project and together with the same passion, commitment and dedication, they both achieved what we see today, the Calandra P001.`,
   },
 ];
