@@ -2,8 +2,8 @@ import type { APIRoute } from "astro";
 import { SMTPClient } from "emailjs";
 import { intern, response } from "lib/email-template";
 
-const EMAIL = Deno.env.get("EMAIL");
-const EMAIL_PASS = Deno.env.get("EMAIL_PASS");
+const EMAIL = import.meta.env.VITE_EMAIL;
+const EMAIL_PASS = import.meta.env.VITE_EMAIL_PASS;
 
 const client = new SMTPClient({
   user: EMAIL,
