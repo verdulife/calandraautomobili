@@ -22,7 +22,7 @@ import Form from "@components/Form.astro";
       </P>
     </header>
 
-    <main class="flex flex-wrap justify-center gap-4 mt-6 lg:mt-12">
+    <main class="flex flex-col md:flex-row items-center justify-center gap-4 mt-6 lg:mt-12">
       <Link href="#form">PROCEED TO FORM</Link>
       <Link href="mailto:info@calandraautomobili.com" secondary>EMAIL US</Link>
     </main>
@@ -30,7 +30,7 @@ import Form from "@components/Form.astro";
 
   <section
     id="form"
-    class="flex flex-col items-center w-full py-48 -mt-32 md:-mt-24"
+    class="flex flex-col items-center w-full py-32 md:py-48 -mt-32 md:-mt-24"
   >
     <Form />
   </section>
