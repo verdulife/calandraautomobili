@@ -2,7 +2,7 @@
 import DateSlide from "./DateSlide.astro";
 
 interface Props {
-  dates: Array<{ year: string; image: string }>;
+  dates: Array<{ year: string; image: string; text: string }>;
 }
 
 const { dates } = Astro.props;
@@ -14,9 +14,9 @@ const { dates } = Astro.props;
 >
   <li class="flex w-1/2 shrink-0"></li>
   {
-    dates.map(({ year, image }) => (
+    dates.map((date) => (
       <li class="snap-center shrink-0">
-        <DateSlide year={year} image={image} />
+        <DateSlide {...date} />
       </li>
     ))
   }

@@ -1,12 +1,13 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
   year: string;
   image: string;
+  text: string;
 }
 
-const { year, image } = Astro.props;
+const { year, image, text } = Astro.props;
 ---
 
 <article class="flex flex-col items-center gap-2">
@@ -23,4 +24,5 @@ const { year, image } = Astro.props;
   <h2 class="text-xl text-gray-300">
     {year}
   </h2>
+  <p class="text-sm text-gray-500 max-w-sm text-center">{text}</p>
 </article>
