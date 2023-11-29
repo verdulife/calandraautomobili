@@ -131,6 +131,7 @@
     });
 
     if (!res.ok) {
+      console.log(await res.json());
       showResponse("An error occured. Please try again.");
       return;
     }

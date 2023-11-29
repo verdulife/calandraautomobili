@@ -2,8 +2,8 @@ import type { APIRoute } from "astro";
 import { SMTPClient } from "emailjs";
 import { intern, response } from "lib/email-template";
 
-const EMAIL = import.meta.env.$EMAIL;
-const EMAIL_PASS = import.meta.env.$EMAIL_PASS;
+const EMAIL = import.meta.env.EMAIL;
+const EMAIL_PASS = import.meta.env.EMAIL_PASS;
 
 const client = new SMTPClient({
   user: EMAIL,
@@ -15,9 +15,14 @@ const client = new SMTPClient({
 });
 
 export const POST: APIRoute = async ({ request }) => {
-  if (request.headers.get("Content-Type") !== "application/json")
-    return new Response(null, { status: 400 });
-
+  return new Response(
+    JSON.stringify({
+      message: { EMAIL, EMAIL_PASS },
+    }),
+    { status: 400 }
+  );
+  if (request.headers.get("Content-Type") !== "application/json") {
+  }
   const formData = await request.json();
 
   const internMessage = {
