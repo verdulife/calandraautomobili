@@ -2,8 +2,8 @@ import type { APIRoute } from "astro";
 import { SMTPClient } from "emailjs";
 import { intern, response } from "lib/email-template";
 
-const EMAIL = process.env.EMAIL;
-const EMAIL_PASS = process.env.EMAIL_PASS;
+const EMAIL = import.meta.env.$EMAIL;
+const EMAIL_PASS = import.meta.env.$EMAIL_PASS;
 
 const client = new SMTPClient({
   user: EMAIL,
