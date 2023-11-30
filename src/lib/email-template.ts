@@ -147,7 +147,7 @@ export const response = (data: FormData) => /* html */ `
               style="font-size: 20px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; text-decoration: none; color: #ffffff;">
               Thank you for contacting
               <br />
-                Calandra Automobily,
+                Calandra Automobili,
             </h1>
             <p
               style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #999999;">
