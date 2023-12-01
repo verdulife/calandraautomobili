@@ -12,6 +12,6 @@ export const dates = [
   {
     year: "2013",
     image: "/heritage/3.jpg",
-    text: "Piero Gaspare Calandra participaring in at Copa de Campeones in Spain.",
+    text: "Piero and Gaspare participating at the Copa de Campeones in Spain.",
   },
 ];
