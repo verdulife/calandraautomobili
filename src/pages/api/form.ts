@@ -9,9 +9,7 @@ const client = new SMTPClient({
   user: EMAIL,
   password: EMAIL_PASS,
   host: "smtpout.secureserver.net",
-  tls: {
-    ciphers: "SSLv3",
-  },
+  ssl: true,
 });
 
 export const POST: APIRoute = async ({ request }) => {
