@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+
+import yellow from "@assets/front/yellow.jpg";
+import orange from "@assets/front/orange.jpg";
+import red from "@assets/front/red.jpg";
+import blue from "@assets/front/blue.jpg";
+import green from "@assets/front/green.jpg";
+import gray from "@assets/front/gray.jpg";
+import white from "@assets/front/white.jpg";
+import black from "@assets/front/black.jpg";
+---
+
+<article id="slider" class="relative flex h-full w-full">
+  <picture id="frontColorImages" class="absolute h-full w-full">
+    <Image
+      src={black}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={white}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={gray}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={green}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={blue}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={red}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={orange}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+    <Image
+      src={yellow}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute z-10 h-full w-full object-cover opacity-0"
+    />
+  </picture>
+</article>
+
+<div
+  class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 lg:bottom-10"
+>
+  <select
+    id="frontColorSelector"
+    class="bg-transparent text-white focus:outline-none [&>option]:bg-black"
+  >
+    <option value="7">Yellow</option>
+    <option value="6">Orange</option>
+    <option value="5">Red</option>
+    <option value="4">Blue</option>
+    <option value="3">Green</option>
+    <option value="2">Gray</option>
+    <option value="1">White</option>
+    <option value="0">Black</option>
+  </select>
+</div>
+
+<script is:inline>
+  (function () {
+    const frontColorImages = document.querySelectorAll(
+      "picture#frontColorImages > img",
+    );
+    const frontColorSelector = document.querySelector(
+      "select#frontColorSelector",
+    );
+
+    frontColorImages[7].classList.remove("z-10", "opacity-0");
+
+    frontColorSelector.addEventListener("change", () => {
+      const selectorIndex = frontColorSelector.value;
+      frontColorImages.forEach((image) =>
+        image.classList.remove("z-10", "opacity-0"),
+      );
+      frontColorImages[selectorIndex].classList.add("z-10");
+    });
+  })();
+</script>
