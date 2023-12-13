@@ -7,18 +7,16 @@ import Gallery from "@components/Gallery.astro";
 import ProtoypeCard from "@components/CarCard.astro";
 import Divider from "@components/Divider.astro";
 import Marquee from "@components/Marquee.astro";
+import Brand from "@icons/Brand.astro";
 
 import { cards } from "lib/production";
 import { images } from "lib/production-images";
 import { v1, v2, options } from "lib/versions";
-import { Image } from "astro:assets";
-
-import p001 from "@assets/p001.jpg";
 ---
 
 <Layout title="Heritage | Calandra Automobili">
   <section
-    class="relative flex h-[40dvh] lg:h-[85dvh] w-full flex-col items-center justify-center"
+    class="relative flex h-[42dvh] w-full flex-col items-center justify-center lg:h-[85dvh]"
   >
     <span class="absolute inset-0 h-full w-full">
       <Colors />
@@ -29,8 +27,11 @@ import p001 from "@assets/p001.jpg";
     class="relative flex w-full flex-col items-center justify-center pt-10 lg:pt-20"
   >
     <header class="z-10 flex flex-col items-center gap-8 p-6">
-      <h1 class="text-4xl font-normal leading-tight text-gray-300 lg:text-6xl">
-        Calandra <Strong>GP</Strong>
+      <h1
+        class="flex items-center gap-2 text-4xl font-normal leading-tight text-gray-300 lg:text-6xl"
+      >
+        <Brand width={250} />
+        <Strong>GP</Strong>
       </h1>
 
       <P>
@@ -54,21 +55,15 @@ import p001 from "@assets/p001.jpg";
     </ul>
   </section>
 
-  <section id="versions" class="flex w-full max-w-6xl flex-col justify-center">
-    <picture class="mb-10 mt-20 md:-mb-20 md:mt-0">
-      <Image
-        src={p001}
-        alt="Prototype P001"
-        width={1100}
-        height={493}
-        class="scale-150 md:scale-100"
-      />
-    </picture>
-
+  <section
+    id="versions"
+    class="mt-10 flex w-full max-w-6xl flex-col justify-center"
+  >
     <main class="z-10 flex w-full flex-wrap gap-12 lg:justify-center">
       <article class="flex w-full flex-col gap-6 p-8 md:w-[45%]">
-        <h3 class="text-4xl text-white">
-          <Strong>Calandra GP-S</Strong>
+        <h3 class="flex items-center gap-2 text-4xl text-white">
+          <Brand width={200} />
+          <Strong>GP-S</Strong>
         </h3>
 
         <ul class="flex flex-col text-gray-300">
@@ -87,8 +82,9 @@ import p001 from "@assets/p001.jpg";
       </span>
 
       <article class="flex w-full flex-col gap-6 p-8 md:w-[45%]">
-        <h3 class="text-4xl text-white">
-          <Strong>Calandra GP-C</Strong>
+        <h3 class="flex items-center gap-2 text-4xl text-white">
+          <Brand width={200} />
+          <Strong>GP-C</Strong>
         </h3>
 
         <ul class="flex flex-col text-gray-300">
@@ -113,7 +109,7 @@ import p001 from "@assets/p001.jpg";
   </section>
 
   <section
-    class="relative flex h-[40dvh] lg:h-[80dvh] w-full flex-col items-center justify-center"
+    class="relative flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
   >
     <span class="absolute inset-0 h-full w-full">
       <Gallery images={images} />

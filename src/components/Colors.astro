@@ -1,112 +1,208 @@
 ---
 import { Image } from "astro:assets";
+import Paint from "@icons/Paint.astro";
 
-import yellow from "@assets/front/yellow.jpg";
-import orange from "@assets/front/orange.jpg";
-import red from "@assets/front/red.jpg";
-import blue from "@assets/front/blue.jpg";
-import green from "@assets/front/green.jpg";
-import gray from "@assets/front/gray.jpg";
-import white from "@assets/front/white.jpg";
-import black from "@assets/front/black.jpg";
+import front_yellow from "@assets/front/yellow.jpg";
+import front_orange from "@assets/front/orange.jpg";
+import front_red from "@assets/front/red.jpg";
+import front_blue from "@assets/front/blue.jpg";
+import front_green from "@assets/front/green.jpg";
+import front_grey from "@assets/front/grey.jpg";
+import front_white from "@assets/front/white.jpg";
+import front_black from "@assets/front/black.jpg";
+
+import back_yellow from "@assets/back/yellow.jpg";
+import back_orange from "@assets/back/orange.jpg";
+import back_red from "@assets/back/red.jpg";
+import back_blue from "@assets/back/blue.jpg";
+import back_green from "@assets/back/green.jpg";
+import back_grey from "@assets/back/grey.jpg";
+import back_white from "@assets/back/white.jpg";
+import back_black from "@assets/back/black.jpg";
+import Direction from "@icons/Direction.astro";
 ---
 
-<article id="slider" class="relative flex h-full w-full">
-  <picture id="frontColorImages" class="absolute h-full w-full">
+<article id="colors" class="relative flex h-full w-full">
+  <picture class="absolute h-full w-full">
     <Image
-      src={black}
+      src={front_yellow}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover"
     />
     <Image
-      src={white}
+      src={front_orange}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
     <Image
-      src={gray}
+      src={front_red}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
     <Image
-      src={green}
+      src={front_blue}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
     <Image
-      src={blue}
+      src={front_green}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
     <Image
-      src={red}
+      src={front_grey}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
     <Image
-      src={orange}
+      src={front_white}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
     <Image
-      src={yellow}
+      src={front_black}
       alt="Calandra production"
       width={1903}
       height={785}
-      class="absolute z-10 h-full w-full object-cover opacity-0"
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+  </picture>
+  <picture
+    class="absolute z-10 h-full w-full opacity-0 transition-opacity duration-500"
+  >
+    <Image
+      src={back_yellow}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover"
+    />
+    <Image
+      src={back_orange}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={back_red}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={back_blue}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={back_green}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={back_grey}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={back_white}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={back_black}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
   </picture>
 </article>
 
-<div
-  class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 lg:bottom-10"
+<nav
+  class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 lg:bottom-10 text-xs lg:text-base"
 >
-  <select
-    id="frontColorSelector"
-    class="bg-transparent text-white focus:outline-none [&>option]:bg-black"
+  <div
+    class="flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
   >
-    <option value="7">Yellow</option>
-    <option value="6">Orange</option>
-    <option value="5">Red</option>
-    <option value="4">Blue</option>
-    <option value="3">Green</option>
-    <option value="2">Gray</option>
-    <option value="1">White</option>
-    <option value="0">Black</option>
-  </select>
-</div>
+    <Direction />
+    <select
+      id="viewSelector"
+      class="w-24 lg:w-32 bg-transparent focus:outline-none [&>option]:bg-black"
+    >
+      <option value="0">Front view</option>
+      <option value="1">Back view</option>
+    </select>
+  </div>
+
+  <div
+    class="flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
+  >
+    <Paint />
+    <select
+      id="colorSelector"
+      class="w-24 bg-transparent focus:outline-none [&>option]:bg-black"
+    >
+      <option value="0">Yellow</option>
+      <option value="1">Orange</option>
+      <option value="2">Red</option>
+      <option value="3">Blue</option>
+      <option value="4">Green</option>
+      <option value="5">Grey</option>
+      <option value="6">White</option>
+      <option value="7">Black</option>
+    </select>
+  </div>
+</nav>
 
 <script is:inline>
   (function () {
-    const frontColorImages = document.querySelectorAll(
-      "picture#frontColorImages > img",
-    );
-    const frontColorSelector = document.querySelector(
-      "select#frontColorSelector",
-    );
+    const views = document.querySelectorAll("article#colors > picture");
+    const viewSelector = document.querySelector("select#viewSelector");
+    const colorSelector = document.querySelector("select#colorSelector");
 
-    frontColorImages[7].classList.remove("z-10", "opacity-0");
+    viewSelector.addEventListener("change", () => {
+      const selectorIndex = viewSelector.value;
 
-    frontColorSelector.addEventListener("change", () => {
-      const selectorIndex = frontColorSelector.value;
-      frontColorImages.forEach((image) =>
-        image.classList.remove("z-10", "opacity-0"),
-      );
-      frontColorImages[selectorIndex].classList.add("z-10");
+      if (selectorIndex == 1) views[1].classList.remove("opacity-0");
+      else views[1].classList.add("opacity-0");
+    });
+
+    colorSelector.addEventListener("change", () => {
+      const selectorIndex = colorSelector.value;
+
+      views.forEach((view) => {
+        const images = view.querySelectorAll("img");
+
+        images.forEach((image, i) => {
+          if (i != selectorIndex && i != 0) image.classList.add("opacity-0");
+          else image.classList.remove("opacity-0");
+        });
+      });
     });
   })();
 </script>

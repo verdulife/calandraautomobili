@@ -16,12 +16,12 @@ export const cards = [
   },
   {
     title: "Brakes and Wheels",
-    desc: "Designed fully in house with the highest detail and refinement lines to be able to achieve the maximum downforce without compromising the styling. Slight changes have been introduced to the GP version. This has been done to improve the overall package. These modifications have arrived to give the driver the most comfort possible both on road and track.",
+    desc: "The choice of 4 or 6 piston caliper is available depending on demands. These have been studied to be able to offer the customer various versions depending on their use. Piston size has been crucial to determinate the best option for either road or track use. With standard monoblock aluminium 19” rims, we also offer a forged version for the demanding drivers.",
     icon: "/svg/tire.svg",
   },
   {
     title: "Interior",
-    desc: "The choice of 4 or 6 piston caliper is available depending on demands. These have been studied to be able to offer the customer various versions depending on their use. Piston size has been crucial to determinate the best option for either road or track use. With standard monoblock aluminium 19” rims, we also offer a forged version for the demanding drivers.",
+    desc: "Simplistic design with high quality finishing. Detail is extraordinary for both road and track versions where we have maintained the simplicity for the driver to only focus on the road. All aluminum buttons and knobs are CNC machined. Trimmed cockpit and surroundings in Alcantara. Race seats and a 4-point harness belt, offers firm occupant support giving you that GT race car feeling.",
     icon: "/svg/glass.svg",
   },
   {

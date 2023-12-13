@@ -9,7 +9,7 @@ export const dates = [
   },
   {
     year: "1982",
-    desc: `He participated as a formula Ford mechanic while studying is Mechanical Engineering degree to gain understanding and experience of race cars. He also built various wooden models of Formula Ford cars. After graduating in Mechanical Engineering, he designs his own Formula Ford chassis. He finally decides to work as a design engineer for Audi, BMW, GM, VW, SEAT, Mercedes and Bentley.`,
+    desc: `He participated as a formula Ford mechanic while studying his Mechanical Engineering degree to gain understanding and experience of race cars. He also built various wooden models of Formula Ford cars. After graduating in Mechanical Engineering, he designs his own Formula Ford chassis. He finally decides to work as a design engineer for Audi, BMW, GM, VW, SEAT, Mercedes and Bentley.`,
   },
   {
     year: "1995",
