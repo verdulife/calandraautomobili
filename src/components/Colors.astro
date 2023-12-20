@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
+import Direction from "@icons/Direction.astro";
 import Paint from "@icons/Paint.astro";
+import Wheel from "@icons/Wheel.astro";
 
 import front_yellow from "@assets/front/yellow.jpg";
 import front_orange from "@assets/front/orange.jpg";
@@ -19,7 +21,11 @@ import back_green from "@assets/back/green.jpg";
 import back_grey from "@assets/back/grey.jpg";
 import back_white from "@assets/back/white.jpg";
 import back_black from "@assets/back/black.jpg";
-import Direction from "@icons/Direction.astro";
+
+import rims_anthracite from "@assets/rims/anthracite.jpg";
+import rims_black from "@assets/rims/black.jpg";
+import rims_gold from "@assets/rims/gold.jpg";
+import rims_silver from "@assets/rims/silver.jpg";
 ---
 
 <article id="colors" class="relative flex h-full w-full">
@@ -141,10 +147,42 @@ import Direction from "@icons/Direction.astro";
       class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
   </picture>
+  <picture
+    class="absolute z-10 h-full w-full opacity-0 transition-opacity duration-500"
+  >
+    <Image
+      src={rims_anthracite}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover"
+    />
+    <Image
+      src={rims_black}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={rims_gold}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+    <Image
+      src={rims_silver}
+      alt="Calandra production"
+      width={1903}
+      height={785}
+      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
+    />
+  </picture>
 </article>
 
 <nav
-  class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 lg:bottom-10 text-xs lg:text-base"
+  class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 text-xs lg:bottom-10 lg:text-base"
 >
   <div
     class="flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
@@ -152,15 +190,16 @@ import Direction from "@icons/Direction.astro";
     <Direction />
     <select
       id="viewSelector"
-      class="w-24 lg:w-32 bg-transparent focus:outline-none [&>option]:bg-black"
+      class="w-24 bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
     >
       <option value="0">Front view</option>
-      <option value="1">Back view</option>
+      <option value="1">Rear view</option>
+      <option value="2">Rims view</option>
     </select>
   </div>
 
   <div
-    class="flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
+    class="colorWrapper flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
   >
     <Paint />
     <select
@@ -177,23 +216,82 @@ import Direction from "@icons/Direction.astro";
       <option value="7">Black</option>
     </select>
   </div>
+
+  <div
+    class="rimsWrapper flex hidden gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
+  >
+    <Wheel />
+    <select
+      id="rimsSelector"
+      class="w-24 bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
+    >
+      <option value="0">Anthracite</option>
+      <option value="1">Black</option>
+      <option value="2">Gold</option>
+      <option value="3">Silver</option>
+    </select>
+  </div>
 </nav>
 
 <script is:inline>
   (function () {
     const views = document.querySelectorAll("article#colors > picture");
     const viewSelector = document.querySelector("select#viewSelector");
+    const colorWrapper = document.querySelector("div.colorWrapper");
     const colorSelector = document.querySelector("select#colorSelector");
+    const rimsWrapper = document.querySelector("div.rimsWrapper");
+    const rimsSelector = document.querySelector("select#rimsSelector");
 
     viewSelector.addEventListener("change", () => {
       const selectorIndex = viewSelector.value;
 
       if (selectorIndex == 1) views[1].classList.remove("opacity-0");
       else views[1].classList.add("opacity-0");
+
+      if (selectorIndex == 2) {
+        rimsWrapper.classList.remove("hidden");
+        colorWrapper.classList.add("hidden");
+        views[2].classList.remove("opacity-0");
+        rimsSelector.value = 0;
+
+        views.forEach((view) => {
+          const images = view.querySelectorAll("img");
+
+          images.forEach((image, i) => {
+            if (i != 0) image.classList.add("opacity-0");
+          });
+        });
+      } else {
+        rimsWrapper.classList.add("hidden");
+        colorWrapper.classList.remove("hidden");
+        views[2].classList.add("opacity-0");
+        colorSelector.value = 0;
+
+        views.forEach((view) => {
+          const images = view.querySelectorAll("img");
+
+          images.forEach((image, i) => {
+            if (i != 0) image.classList.add("opacity-0");
+          });
+        });
+      }
     });
 
     colorSelector.addEventListener("change", () => {
       const selectorIndex = colorSelector.value;
+
+      views.forEach((view) => {
+        const images = view.querySelectorAll("img");
+
+        images.forEach((image, i) => {
+          if (i != selectorIndex && i != 0) image.classList.add("opacity-0");
+          else image.classList.remove("opacity-0");
+        });
+      });
+    });
+
+    rimsSelector.addEventListener("change", () => {
+      const selectorIndex = rimsSelector.value;
 
       views.forEach((view) => {
         const images = view.querySelectorAll("img");
