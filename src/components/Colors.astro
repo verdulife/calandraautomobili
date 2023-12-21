@@ -1,182 +1,21 @@
 ---
 import { Image } from "astro:assets";
+
 import Direction from "@icons/Direction.astro";
 import Paint from "@icons/Paint.astro";
 import Wheel from "@icons/Wheel.astro";
 
-import front_yellow from "@assets/front/yellow.jpg";
-import front_orange from "@assets/front/orange.jpg";
-import front_red from "@assets/front/red.jpg";
-import front_blue from "@assets/front/blue.jpg";
-import front_green from "@assets/front/green.jpg";
-import front_grey from "@assets/front/grey.jpg";
-import front_white from "@assets/front/white.jpg";
-import front_black from "@assets/front/black.jpg";
-
-import back_yellow from "@assets/back/yellow.jpg";
-import back_orange from "@assets/back/orange.jpg";
-import back_red from "@assets/back/red.jpg";
-import back_blue from "@assets/back/blue.jpg";
-import back_green from "@assets/back/green.jpg";
-import back_grey from "@assets/back/grey.jpg";
-import back_white from "@assets/back/white.jpg";
-import back_black from "@assets/back/black.jpg";
-
-import rims_anthracite from "@assets/rims/anthracite.jpg";
-import rims_black from "@assets/rims/black.jpg";
-import rims_gold from "@assets/rims/gold.jpg";
-import rims_silver from "@assets/rims/silver.jpg";
+import baseImage from "@assets/anthracite.jpg";
 ---
 
 <article id="colors" class="relative flex h-full w-full">
-  <picture class="absolute h-full w-full">
+  <picture class="relative h-full w-full">
     <Image
-      src={front_yellow}
-      alt="Calandra production"
+      src={baseImage}
+      alt="Calandra Production GP"
       width={1903}
       height={785}
       class="absolute h-full w-full object-cover"
-    />
-    <Image
-      src={front_orange}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={front_red}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={front_blue}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={front_green}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={front_grey}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={front_white}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={front_black}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-  </picture>
-  <picture
-    class="absolute z-10 h-full w-full opacity-0 transition-opacity duration-500"
-  >
-    <Image
-      src={back_yellow}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover"
-    />
-    <Image
-      src={back_orange}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={back_red}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={back_blue}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={back_green}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={back_grey}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={back_white}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={back_black}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-  </picture>
-  <picture
-    class="absolute z-10 h-full w-full opacity-0 transition-opacity duration-500"
-  >
-    <Image
-      src={rims_anthracite}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover"
-    />
-    <Image
-      src={rims_black}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={rims_gold}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
-    />
-    <Image
-      src={rims_silver}
-      alt="Calandra production"
-      width={1903}
-      height={785}
-      class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-500"
     />
   </picture>
 </article>
@@ -185,122 +24,99 @@ import rims_silver from "@assets/rims/silver.jpg";
   class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 text-xs lg:bottom-10 lg:text-base"
 >
   <div
-    class="flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
+    class="flex items-center gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
   >
     <Direction />
     <select
       id="viewSelector"
-      class="w-24 bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
+      class="w-28 bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
     >
-      <option value="0">Front view</option>
-      <option value="1">Rear view</option>
-      <option value="2">Rims view</option>
+      <option value="front">Front view</option>
+      <option value="rear">Rear view</option>
     </select>
   </div>
 
   <div
-    class="colorWrapper flex gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
+    class="flex items-center rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white lg:gap-1"
   >
     <Paint />
     <select
       id="colorSelector"
-      class="w-24 bg-transparent focus:outline-none [&>option]:bg-black"
+      class="w-px bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
     >
-      <option value="0">Yellow</option>
-      <option value="1">Orange</option>
-      <option value="2">Red</option>
-      <option value="3">Blue</option>
-      <option value="4">Green</option>
-      <option value="5">Grey</option>
-      <option value="6">White</option>
-      <option value="7">Black</option>
+      <option value="yellow">Yellow</option>
+      <option value="orange">Orange</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="grey">Grey</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
     </select>
   </div>
 
   <div
-    class="rimsWrapper flex hidden gap-1 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white"
+    class="flex items-center rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black px-4 py-3 text-white lg:gap-1"
   >
     <Wheel />
     <select
       id="rimsSelector"
-      class="w-24 bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
+      class="w-px bg-transparent focus:outline-none lg:w-32 [&>option]:bg-black"
     >
-      <option value="0">Anthracite</option>
-      <option value="1">Black</option>
-      <option value="2">Gold</option>
-      <option value="3">Silver</option>
+      <option value="anthracite">Anthracite</option>
+      <option value="black">Black</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
     </select>
   </div>
 </nav>
 
 <script is:inline>
   (function () {
-    const views = document.querySelectorAll("article#colors > picture");
+    const picture = document.querySelector("article#colors > picture");
+    const image = picture.querySelector("img");
     const viewSelector = document.querySelector("select#viewSelector");
-    const colorWrapper = document.querySelector("div.colorWrapper");
     const colorSelector = document.querySelector("select#colorSelector");
-    const rimsWrapper = document.querySelector("div.rimsWrapper");
     const rimsSelector = document.querySelector("select#rimsSelector");
 
+    image.classList.remove("opacity-0");
+
+    const selection = {
+      view: "front",
+      color: "yellow",
+      rims: "anthracite",
+    };
+
+    const src = (selection) =>
+      `production/${selection.view}/${selection.color}/${selection.rims}.jpg`;
+
+    function setSelection() {
+      const overlay = document.createElement("img");
+
+      overlay.classList.add(
+        "absolute",
+        "h-full",
+        "w-full",
+        "object-cover",
+        "animate-fadein",
+      );
+      overlay.src = src(selection);
+      picture.appendChild(overlay);
+    }
+
     viewSelector.addEventListener("change", () => {
-      const selectorIndex = viewSelector.value;
-
-      if (selectorIndex == 1) views[1].classList.remove("opacity-0");
-      else views[1].classList.add("opacity-0");
-
-      if (selectorIndex == 2) {
-        rimsWrapper.classList.remove("hidden");
-        colorWrapper.classList.add("hidden");
-        views[2].classList.remove("opacity-0");
-        rimsSelector.value = 0;
-
-        views.forEach((view) => {
-          const images = view.querySelectorAll("img");
-
-          images.forEach((image, i) => {
-            if (i != 0) image.classList.add("opacity-0");
-          });
-        });
-      } else {
-        rimsWrapper.classList.add("hidden");
-        colorWrapper.classList.remove("hidden");
-        views[2].classList.add("opacity-0");
-        colorSelector.value = 0;
-
-        views.forEach((view) => {
-          const images = view.querySelectorAll("img");
-
-          images.forEach((image, i) => {
-            if (i != 0) image.classList.add("opacity-0");
-          });
-        });
-      }
+      selection.view = viewSelector.value;
+      setSelection();
     });
 
     colorSelector.addEventListener("change", () => {
-      const selectorIndex = colorSelector.value;
-
-      views.forEach((view) => {
-        const images = view.querySelectorAll("img");
-
-        images.forEach((image, i) => {
-          if (i != selectorIndex && i != 0) image.classList.add("opacity-0");
-          else image.classList.remove("opacity-0");
-        });
-      });
+      selection.color = colorSelector.value;
+      setSelection();
     });
 
     rimsSelector.addEventListener("change", () => {
-      const selectorIndex = rimsSelector.value;
-
-      views.forEach((view) => {
-        const images = view.querySelectorAll("img");
-
-        images.forEach((image, i) => {
-          if (i != selectorIndex && i != 0) image.classList.add("opacity-0");
-          else image.classList.remove("opacity-0");
-        });
-      });
+      selection.rims = rimsSelector.value;
+      setSelection();
     });
   })();
 </script>

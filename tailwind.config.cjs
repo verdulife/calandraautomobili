@@ -13,6 +13,15 @@ module.exports = {
       fontFamily: {
         sans: "Gotham SSm A",
       },
+      animation: {
+        fadein: 'fadeIn 400ms ease-out',
+      },
+      keyframes: theme => ({
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      }),
     },
   },
   plugins: [],
