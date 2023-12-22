@@ -74,12 +74,9 @@ import baseImage from "@assets/anthracite.jpg";
 <script is:inline>
   (function () {
     const picture = document.querySelector("article#colors > picture");
-    const image = picture.querySelector("img");
     const viewSelector = document.querySelector("select#viewSelector");
     const colorSelector = document.querySelector("select#colorSelector");
     const rimsSelector = document.querySelector("select#rimsSelector");
-
-    image.classList.remove("opacity-0");
 
     const selection = {
       view: "front",
