@@ -10,12 +10,12 @@ const { dates } = Astro.props;
 
 <ul
   id="slider"
-  class="flex w-full gap-4 px-48 overflow-x-auto snap-mandatory snap-x pb-14 scrollbar-hide"
+  class="scrollbar-hide flex w-full snap-x snap-mandatory gap-4 overflow-x-auto px-48 pb-14"
 >
   <li class="flex w-1/2 shrink-0"></li>
   {
     dates.map((date) => (
-      <li class="snap-center shrink-0">
+      <li class="shrink-0 snap-center">
         <DateSlide {...date} />
       </li>
     ))
@@ -24,16 +24,16 @@ const { dates } = Astro.props;
 </ul>
 
 <div
-  class="hidden p-1 border-2 rounded-full md:flex border-zinc-800 bg-gradient-to-t from-zinc-950 to-black"
+  class="hidden rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black p-1 md:flex"
 >
   <button
     id="prev"
-    class="w-40 py-3 text-sm text-gray-300 transition-colors rounded-full px-7 whitespace-nowrap hover:bg-zinc-700"
+    class="w-40 whitespace-nowrap rounded-full px-7 py-3 text-sm text-gray-300 transition-colors hover:bg-zinc-700"
     >PREV</button
   >
   <button
     id="next"
-    class="w-40 py-3 text-sm text-gray-300 transition-colors rounded-full px-7 whitespace-nowrap hover:bg-zinc-700"
+    class="w-40 whitespace-nowrap rounded-full px-7 py-3 text-sm text-gray-300 transition-colors hover:bg-zinc-700"
     >NEXT</button
   >
 </div>
@@ -46,14 +46,14 @@ const { dates } = Astro.props;
 
     prev.addEventListener("click", () => {
       slider.scrollBy({
-        left: -slider.firstElementChild.clientWidth,
+        left: -10,
         behavior: "smooth",
       });
     });
 
     next.addEventListener("click", () => {
       slider.scrollBy({
-        left: slider.firstElementChild.clientWidth,
+        left: 10,
         behavior: "smooth",
       });
     });

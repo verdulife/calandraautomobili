@@ -1,5 +1,6 @@
 export const images = [
-  "/prototype/front.jpg",
   "/prototype/side.jpg",
   "/prototype/back.jpg",
+  "/prototype/front.jpg",
+  "/prototype/back-2.jpg",
 ];

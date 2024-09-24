@@ -10,7 +10,7 @@ import Gallery from "@components/Gallery.astro";
 import Brand from "@icons/Brand.astro";
 ---
 
-<Layout title="Heritage | Calandra Automobili">
+<Layout title="Prototype P001 | Calandra Automobili">
   <section
     class="relative flex h-[80vh] w-full flex-col items-center justify-center"
   >
@@ -55,10 +55,8 @@ import Brand from "@icons/Brand.astro";
   </section>
 
   <section
-    class="relative mt-32 flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
+    class="mb-10 mt-32 flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
   >
-    <span class="absolute inset-0 h-full w-full">
-      <Gallery images={images} />
-    </span>
+    <Gallery images={images} />
   </section>
 </Layout>

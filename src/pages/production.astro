@@ -14,7 +14,7 @@ import { images } from "lib/production-images";
 import { v1, v2, options } from "lib/versions";
 ---
 
-<Layout title="Heritage | Calandra Automobili">
+<Layout title="Production GP | Calandra Automobili">
   <section
     class="relative flex h-[42dvh] w-full flex-col items-center justify-center lg:h-[85dvh]"
   >
@@ -109,10 +109,8 @@ import { v1, v2, options } from "lib/versions";
   </section>
 
   <section
-    class="relative flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
+    class="mb-10 flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
   >
-    <span class="absolute inset-0 h-full w-full">
-      <Gallery images={images} />
-    </span>
+    <Gallery images={images} />
   </section>
 </Layout>
