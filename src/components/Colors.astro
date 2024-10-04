@@ -72,7 +72,7 @@ import baseImage from "@assets/anthracite.jpg";
 </nav>
 
 <script is:inline>
-  (function () {
+  function init_colors() {
     const picture = document.querySelector("article#colors > picture");
     const viewSelector = document.querySelector("select#viewSelector");
     const colorSelector = document.querySelector("select#colorSelector");
@@ -95,7 +95,7 @@ import baseImage from "@assets/anthracite.jpg";
         "h-full",
         "w-full",
         "object-cover",
-        "animate-fadein",
+        "animate-fadein"
       );
       overlay.src = src(selection);
       picture.appendChild(overlay);
@@ -115,5 +115,8 @@ import baseImage from "@assets/anthracite.jpg";
       selection.rims = rimsSelector.value;
       setSelection();
     });
-  })();
+  }
+
+  init_colors();
+  document.addEventListener("astro:after-swap", init_colors);
 </script>
