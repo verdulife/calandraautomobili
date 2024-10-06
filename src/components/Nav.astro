@@ -6,10 +6,10 @@ import Menu from "@icons/Menu.astro";
 ---
 
 <nav
-  class="fixed top-0 z-20 flex justify-center w-full pb-20 pointer-events-none bg-gradient-to-b from-black via-black/70 to-transparent"
+  class="pointer-events-none fixed top-0 z-20 flex w-full justify-center bg-gradient-to-b from-black via-black/70 to-transparent pb-20"
 >
   <ul
-    class="hidden lg:flex items-center font-medium gap-4 text-gray-300 [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:rounded-lg [&_a:hover]:bg-zinc-700 [&_a]:transition lg:ml-28 pointer-events-auto"
+    class="pointer-events-auto hidden items-center gap-4 font-medium text-gray-300 lg:ml-28 lg:flex [&_a:hover]:bg-zinc-700 [&_a]:rounded-lg [&_a]:px-4 [&_a]:py-2 [&_a]:text-sm [&_a]:transition"
   >
     {
       routes.map((route, i) => {
@@ -17,7 +17,7 @@ import Menu from "@icons/Menu.astro";
           return (
             <>
               <li>
-                <picture class="flex flex-col justify-between gap-6 mx-8">
+                <picture class="mx-8 flex flex-col justify-between gap-6">
                   <Flag />
                   <Logo />
                 </picture>
@@ -40,23 +40,23 @@ import Menu from "@icons/Menu.astro";
   </ul>
 
   <div
-    class="relative flex items-start justify-between w-full p-8 text-white lg:hidden shrink-0"
+    class="relative flex w-full shrink-0 items-start justify-between p-8 text-white lg:hidden"
   >
     <picture class="z-10">
       <Logo />
     </picture>
 
-    <button id="menuBtn" class="z-10 pointer-events-auto">
+    <button id="menuBtn" class="pointer-events-auto z-10">
       <Menu />
     </button>
 
     <ul
       id="menu"
-      class="absolute left-0 flex flex-col justify-center w-full h-screen text-gray-300 transition-all duration-500 opacity-0 pointer-events-none -top-full bg-black/70 backdrop-blur-lg"
+      class="pointer-events-none absolute -top-full left-0 flex h-screen w-full flex-col justify-center bg-black/70 text-gray-300 opacity-0 backdrop-blur-lg transition-all duration-500"
     >
       {
         routes.map((route, i) => (
-          <li class="flex justify-center w-full border-b last:border-b-0 border-zinc-800">
+          <li class="flex w-full justify-center border-b border-zinc-800 last:border-b-0">
             <a href={route.slug} class="w-full p-6 text-center">
               {route.title}
             </a>
@@ -81,8 +81,8 @@ import Menu from "@icons/Menu.astro";
   }
 </style>
 
-<script is:inline>
-  (function () {
+<script>
+  function init_menu() {
     const menu = document.querySelector("#menu");
     const menuBtn = document.querySelector("#menuBtn");
 
@@ -91,5 +91,8 @@ import Menu from "@icons/Menu.astro";
     }
 
     menuBtn.addEventListener("click", toggleMenu);
-  })();
+  }
+
+  init_menu();
+  document.addEventListener("astro:after-swap", init_menu);
 </script>
