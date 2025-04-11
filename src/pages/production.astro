@@ -2,7 +2,6 @@
 import "@/assets/fonts/expansiva.css";
 import Layout from "@/layouts/Layout.astro";
 import P from "@/components/P.astro";
-import Strong from "@/components/Strong.astro";
 import Colors from "@/components/Colors.astro";
 import Gallery from "@/components/Gallery.astro";
 import ProtoypeCard from "@/components/CarCard.astro";
@@ -18,12 +17,14 @@ import { v1, v2, options } from "@/lib/versions";
 
 <Layout title="Production GP | Calandra Automobili">
   <section
-    class="relative flex h-[45svh] w-full flex-col items-center justify-center lg:h-[85svh]"
+    class="relative flex h-[45svh] w-full flex-col items-center justify-center lg:h-[85svh] pt-24"
   >
-    <span class="absolute inset-0 h-full w-full">
-      <!-- <Colors /> -->
-      <Gallery id="heroGallery" images={heroImages} />
-    </span>
+    <div class="absolute top-24 left-0 w-full bg-gradient-to-b from-black to-transparent h-24 z-10"></div>
+    <Gallery id="heroGallery" images={heroImages} />
+
+    <!-- <span class="absolute inset-0 h-full w-full">
+      <Colors />
+    </span> -->
   </section>
 
   <section
@@ -63,7 +64,9 @@ import { v1, v2, options } from "@/lib/versions";
   >
     <main class="z-10 flex w-full flex-wrap gap-12 lg:justify-center">
       <article class="flex w-full flex-col gap-6 p-8 md:w-[45%]">
-        <h3 class="font-expansiva flex items-center gap-2 text-xl lg:text-3xl text-white">
+        <h3
+          class="font-expansiva flex items-center gap-2 text-xl text-white lg:text-3xl"
+        >
           CALANDRA <span class="italic text-italyred">GPSport</span>
         </h3>
 
@@ -83,7 +86,9 @@ import { v1, v2, options } from "@/lib/versions";
       </span>
 
       <article class="flex w-full flex-col gap-6 p-8 md:w-[45%]">
-        <h3 class="font-expansiva flex items-center gap-2 text-xl lg:text-3xl text-white">
+        <h3
+          class="font-expansiva flex items-center gap-2 text-xl text-white lg:text-3xl"
+        >
           CALANDRA <span class="italic text-italyred">GPCorsa</span>
         </h3>
 
