@@ -1,52 +1,50 @@
 ---
 import { Image } from "astro:assets";
 
-interface Props {
-  images: Array<string>;
-}
-
-const { images } = Astro.props;
+const { id, images } = Astro.props;
 ---
 
-<ul
-  id="slider"
-  class="scrollbar-hide flex h-full w-full snap-x snap-mandatory overflow-x-auto"
->
-  {
-    images.map((image) => (
-      <li class="h-full w-full shrink-0 snap-center">
-        <Image
-          src={image}
-          alt="Inside"
-          width={1600}
-          height={1067}
-          class="h-full w-full object-cover"
-        />
-      </li>
-    ))
-  }
-</ul>
+<div class="relative h-full w-full">
+  <ul
+    id={id}
+    class="scrollbar-hide flex h-full w-full snap-x snap-mandatory overflow-x-auto"
+  >
+    {
+      images.map((image) => (
+        <li class="h-full w-full shrink-0 snap-center">
+          <Image
+            src={image}
+            alt="Inside"
+            width={1600}
+            height={1067}
+            class="h-full w-full object-cover"
+          />
+        </li>
+      ))
+    }
+  </ul>
 
-<div
-  class="mt-4 flex rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black p-1"
->
-  <button
-    id="prev"
-    class="w-40 whitespace-nowrap rounded-full px-7 py-3 text-sm text-gray-300 transition-colors hover:bg-zinc-700"
-    >PREV</button
+  <div
+    class="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-zinc-800 bg-gradient-to-t from-zinc-950 to-black p-1 lg:bottom-10 lg:translate-y-0"
   >
-  <button
-    id="next"
-    class="w-40 whitespace-nowrap rounded-full px-7 py-3 text-sm text-gray-300 transition-colors hover:bg-zinc-700"
-    >NEXT</button
-  >
+    <button
+      id={`${id}-prev`}
+      class="w-40 whitespace-nowrap rounded-full px-7 py-3 text-sm text-gray-300 transition-colors hover:bg-zinc-700"
+      >PREV</button
+    >
+    <button
+      id={`${id}-next`}
+      class="w-40 whitespace-nowrap rounded-full px-7 py-3 text-sm text-gray-300 transition-colors hover:bg-zinc-700"
+      >NEXT</button
+    >
+  </div>
 </div>
 
-<script>
+<script define:vars={{ id }} is:inline>
   function init_gallery() {
-    const slider = document.querySelector("#slider");
-    const prev = document.querySelector("#prev");
-    const next = document.querySelector("#next");
+    const slider = document.querySelector(`#${id}`);
+    const prev = document.querySelector(`#${id}-prev`);
+    const next = document.querySelector(`#${id}-next`);
 
     prev.addEventListener("click", () => {
       slider.scrollBy({

@@ -1,24 +1,24 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Strong from "@components/Strong.astro";
-import Link from "@components/Link.astro";
-import Pretitle from "@components/Pretitle.astro";
-import DateCard from "@components/DateCard.astro";
-import P from "@components/P.astro";
-import Divider from "@components/Divider.astro";
-import Reveal from "@components/Reveal.astro";
+import Layout from "@/layouts/Layout.astro";
+import Strong from "@/components/Strong.astro";
+import Link from "@/components/Link.astro";
+import Pretitle from "@/components/Pretitle.astro";
+import DateCard from "@/components/DateCard.astro";
+import P from "@/components/P.astro";
+import Divider from "@/components/Divider.astro";
+import Reveal from "@/components/Reveal.astro";
 
-import { dates } from "lib/family-passion";
+import { dates } from "@/lib/family-passion";
 import { Image } from "astro:assets";
 
-import homeCar from "@assets/home-car.jpg";
+import homeCar from "@/assets/home-car.jpg";
 ---
 
 <Layout title="Calandra Automobili">
-  <section class="flex flex-col items-center w-full py-24">
+  <section class="flex w-full flex-col items-center py-24">
     <header class="flex flex-col gap-4 p-6 pt-20 lg:pt-28">
       <h1
-        class="text-4xl font-normal leading-tight text-center text-white lg:text-6xl"
+        class="text-center text-4xl font-normal leading-tight text-white lg:text-6xl"
       >
         Track <Strong>focused</Strong> sports car
       </h1>
@@ -29,26 +29,33 @@ import homeCar from "@assets/home-car.jpg";
       </P>
     </header>
 
-    <main class="flex flex-wrap justify-center gap-4 mt-6 lg:mt-12">
+    <main class="mt-6 flex flex-wrap justify-center gap-4 lg:mt-12">
       <Link href="#history">READ THE STORY</Link>
       <Link href="/prototype" secondary>PROTOTYPE P001</Link>
     </main>
 
-    <footer class="-mt-2 -z-10">
+    <footer class="-z-10 -mt-2">
       <picture>
-        <Image  src={homeCar} alt="P001" width={1152} height={560} loading="eager" class="max-w-6xl w-[130%]"></Image>
+        <Image
+          src={homeCar}
+          alt="P001"
+          width={1152}
+          height={560}
+          loading="eager"
+          class="w-[130%] max-w-6xl"
+        />
       </picture>
     </footer>
   </section>
 
   <section
     id="history"
-    class="max-w-3xl flex flex-col items-center gap-8 mt-[-450px] pt-[450px] p-8 z-10"
+    class="z-10 mt-[-450px] flex max-w-3xl flex-col items-center gap-8 p-8 pt-[450px]"
   >
     <Pretitle>A CHILD WITH A DREAM</Pretitle>
 
     <Reveal>
-      <h2 class="text-xl text-center leading-tight text-white lg:text-2xl">
+      <h2 class="text-center text-xl leading-tight text-white lg:text-2xl">
         Gaspare Vittorio Calandra, has been working in the automotive industry
         as a design engineer for over 40 years. From childhood, he had a dream,
         build a street legal race car, so he decided to realize his dream almost
@@ -61,10 +68,10 @@ import homeCar from "@assets/home-car.jpg";
     </Reveal>
   </section>
 
-  <section class="z-10 flex flex-col items-center max-w-3xl gap-6 py-28">
+  <section class="z-10 flex max-w-3xl flex-col items-center gap-6 py-28">
     <header class="pt-0 md:pt-20">
       <h2
-        class="text-4xl font-normal leading-tight text-center text-gray-300 lg:text-6xl"
+        class="text-center text-4xl font-normal leading-tight text-gray-300 lg:text-6xl"
       >
         Family <Strong>passion</Strong>
       </h2>

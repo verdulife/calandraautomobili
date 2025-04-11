@@ -1,18 +1,18 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import P from "@components/P.astro";
-import Strong from "@components/Strong.astro";
-import ProtoypeCard from "@components/CarCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import P from "@/components/P.astro";
+import Strong from "@/components/Strong.astro";
+import ProtoypeCard from "@/components/CarCard.astro";
 
-import { cards } from "lib/prototype";
-import { images } from "lib/prototype-images";
-import Gallery from "@components/Gallery.astro";
-import Brand from "@icons/Brand.astro";
+import { cards } from "@/lib/prototype";
+import { images } from "@/lib/prototype-images";
+import Gallery from "@/components/Gallery.astro";
+import Brand from "@/icons/Brand.astro";
 ---
 
 <Layout title="Prototype P001 | Calandra Automobili">
   <section
-    class="relative flex h-[60dvh] lg:h-[85dvh] w-full flex-col items-center justify-center"
+    class="relative flex h-[60dvh] w-full flex-col items-center justify-center lg:h-[85dvh]"
   >
     <figure class="absolute inset-0 flex bg-black">
       <video
@@ -57,6 +57,6 @@ import Brand from "@icons/Brand.astro";
   <section
     class="mb-10 mt-32 flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
   >
-    <Gallery images={images} />
+    <Gallery id="prototypeGallery" images={images} />
   </section>
 </Layout>

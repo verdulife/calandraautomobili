@@ -1,18 +1,18 @@
 ---
-import Logo from "@icons/Logo.astro";
-import Divider from "@components/Divider.astro";
-import Instagram from "@icons/Instagram.astro";
-import Facebook from "@icons/Facebook.astro";
-import Youtube from "@icons/Youtube.astro";
-import Linkedin from "@icons/Linkedin.astro";
+import Logo from "@/icons/Logo.astro";
+import Divider from "@/components/Divider.astro";
+import Instagram from "@/icons/Instagram.astro";
+import Facebook from "@/icons/Facebook.astro";
+import Youtube from "@/icons/Youtube.astro";
+import Linkedin from "@/icons/Linkedin.astro";
 ---
 
 <footer
-  class="flex justify-center w-full bg-gradient-to-r from-transparent from-10% via-zinc-700 to-transparent to-90% pt-[1px] mt-auto"
+  class="mt-auto flex w-full justify-center bg-gradient-to-r from-transparent from-10% via-zinc-700 to-transparent to-90% pt-[1px]"
 >
-  <div class="flex justify-center w-full px-6 py-12 bg-black md:py-2 md:px-2">
+  <div class="flex w-full justify-center bg-black px-6 py-12 md:px-2 md:py-2">
     <div
-      class="flex flex-wrap items-center justify-center w-full max-w-6xl gap-6 md:gap-12"
+      class="flex w-full max-w-6xl flex-wrap items-center justify-center gap-6 md:gap-12"
     >
       <Logo />
 
@@ -20,8 +20,8 @@ import Linkedin from "@icons/Linkedin.astro";
         <Divider />
       </span>
 
-      <aside class="flex flex-wrap items-center gap-4 grow">
-        <p class="text-sm text-center text-gray-300 md:text-left">
+      <aside class="flex grow flex-wrap items-center gap-4">
+        <p class="text-center text-sm text-gray-300 md:text-left">
           Copyright © 2023 Calandra Automobili S.L. 2023 All rights reserved.
           <br />
 
@@ -34,7 +34,7 @@ import Linkedin from "@icons/Linkedin.astro";
           </a>
         </p>
 
-        <div class="flex gap-4 ml-auto mr-auto md:mr-0">
+        <div class="ml-auto mr-auto flex gap-4 md:mr-0">
           <a
             class="text-gray-300 transition hover:text-white"
             href="https://www.instagram.com/calandraautomobili/"

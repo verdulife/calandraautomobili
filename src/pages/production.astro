@@ -1,25 +1,27 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import P from "@components/P.astro";
-import Strong from "@components/Strong.astro";
-import Colors from "@components/Colors.astro";
-import Gallery from "@components/Gallery.astro";
-import ProtoypeCard from "@components/CarCard.astro";
-import Divider from "@components/Divider.astro";
-import Marquee from "@components/Marquee.astro";
-import Brand from "@icons/Brand.astro";
+import Layout from "@/layouts/Layout.astro";
+import P from "@/components/P.astro";
+import Strong from "@/components/Strong.astro";
+import Colors from "@/components/Colors.astro";
+import Gallery from "@/components/Gallery.astro";
+import ProtoypeCard from "@/components/CarCard.astro";
+import Divider from "@/components/Divider.astro";
+import Marquee from "@/components/Marquee.astro";
+import Brand from "@/icons/Brand.astro";
 
-import { cards } from "lib/production";
-import { images } from "lib/production-images";
-import { v1, v2, options } from "lib/versions";
+import { cards } from "@/lib/production";
+import { images } from "@/lib/production-images";
+import { heroImages } from "@/lib/production-hero-images";
+import { v1, v2, options } from "@/lib/versions";
 ---
 
 <Layout title="Production GP | Calandra Automobili">
   <section
-    class="relative flex h-[42dvh] w-full flex-col items-center justify-center lg:h-[85dvh]"
+    class="relative flex h-[60svh] w-full flex-col items-center justify-center lg:h-[85svh]"
   >
     <span class="absolute inset-0 h-full w-full">
-      <Colors />
+      <!-- <Colors /> -->
+      <Gallery id="heroGallery" images={heroImages} />
     </span>
   </section>
 
@@ -109,8 +111,8 @@ import { v1, v2, options } from "lib/versions";
   </section>
 
   <section
-    class="mb-10 flex h-[40dvh] w-full flex-col items-center justify-center lg:h-[80dvh]"
+    class="mb-10 flex h-[40svh] w-full flex-col items-center justify-center lg:h-[80svh]"
   >
-    <Gallery images={images} />
+    <Gallery id="footerGallery" images={images} />
   </section>
 </Layout>
