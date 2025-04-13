@@ -17,6 +17,14 @@ export const dates = [
   },
   {
     year: "2008",
-    desc: `His son, Piero Gaspare Calandra joins the project and together with the same passion, commitment and dedication, they both achieved what we see today, the Calandra P001.`,
+    desc: "His son, Piero Gaspare Calandra joins the project and together with the same passion, commitment and dedication, they both achieved what we see today, the Calandra P001.",
   },
+  {
+    year: "2022",
+    desc: "First track and road testings are performed. Calandra Automobili as a brand is born.",
+  },
+  {
+    year: "2025",
+    desc: "Ready for production. Taking orders for the Calandra GPSeries.",
+  }
 ];

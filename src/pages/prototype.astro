@@ -1,13 +1,12 @@
 ---
+
 import Layout from "@/layouts/Layout.astro";
 import P from "@/components/P.astro";
-import Strong from "@/components/Strong.astro";
 import ProtoypeCard from "@/components/CarCard.astro";
+import Gallery from "@/components/Gallery.astro";
 
 import { cards } from "@/lib/prototype";
 import { images } from "@/lib/prototype-images";
-import Gallery from "@/components/Gallery.astro";
-import Brand from "@/icons/Brand.astro";
 ---
 
 <Layout title="Prototype P001 | Calandra Automobili">
@@ -27,10 +26,9 @@ import Brand from "@/icons/Brand.astro";
 
     <header class="z-10 flex flex-col items-center gap-8 p-6">
       <h1
-        class="flex items-center gap-2 text-center text-4xl font-normal leading-tight text-gray-300 lg:text-6xl"
+        class="font-expansiva flex items-center gap-2 text-xl font-normal leading-tight text-gray-300 lg:text-4xl"
       >
-        <Brand class="w-[150px] lg:w-[250px]" />
-        <Strong green>P001</Strong>
+        CALANDRA <span class="italic text-italygreen">P001</span>
       </h1>
 
       <P>

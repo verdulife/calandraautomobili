@@ -1,7 +1,7 @@
 export const cards = [
   {
-    title: "A pure sports car",
-    desc: "Light weight, high power and precise handling combined, has given the P001 and GP versions an unprecedented level of driving.",
+    title: "Philosophy",
+    desc: "No electronic driver assistance, V6 configuration ICE and manual gearboxes. The simplicity of our sports car has been forged on track, where we have managed a significant weight reduction to increase performance. The cars will be designed around the customers, where each one will be hand built to suit the customer's driving position.",
     icon: "/svg/feather.svg",
   },
   {
@@ -10,8 +10,8 @@ export const cards = [
     icon: "/svg/road.svg",
   },
   {
-    title: "Track tests",
-    desc: "The results achieved are sensational. High grip and efficient cornering make the Calandra a versatile sports car.",
+    title: "Future",
+    desc: "We will remain true to our passion where we will not explore other automotive configurations. By remaining focused on our road legal sports cars and full GT cars, we will continue studying new materials and technologies with our suppliers to continue delivering the best driving experience possible.",
     icon: "/svg/map.svg",
   },
   {

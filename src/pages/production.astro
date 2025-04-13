@@ -1,13 +1,10 @@
 ---
-import "@/assets/fonts/expansiva.css";
 import Layout from "@/layouts/Layout.astro";
 import P from "@/components/P.astro";
-import Colors from "@/components/Colors.astro";
 import Gallery from "@/components/Gallery.astro";
 import ProtoypeCard from "@/components/CarCard.astro";
 import Divider from "@/components/Divider.astro";
 import Marquee from "@/components/Marquee.astro";
-import Brand from "@/icons/Brand.astro";
 
 import { cards } from "@/lib/production";
 import { images } from "@/lib/production-images";
@@ -17,9 +14,12 @@ import { v1, v2, options } from "@/lib/versions";
 
 <Layout title="Production GP | Calandra Automobili">
   <section
-    class="relative flex h-[45svh] w-full flex-col items-center justify-center lg:h-[85svh] pt-24"
+    class="relative flex h-[45svh] w-full flex-col items-center justify-center pt-24 lg:h-[85svh]"
   >
-    <div class="absolute top-24 left-0 w-full bg-gradient-to-b from-black to-transparent h-24 z-10"></div>
+    <div
+      class="absolute left-0 top-24 z-10 h-24 w-full bg-gradient-to-b from-black to-transparent"
+    >
+    </div>
     <Gallery id="heroGallery" images={heroImages} />
 
     <!-- <span class="absolute inset-0 h-full w-full">
@@ -119,9 +119,3 @@ import { v1, v2, options } from "@/lib/versions";
     <Gallery id="footerGallery" images={images} />
   </section>
 </Layout>
-
-<style>
-  .font-expansiva {
-    font-family: "Expansiva", sans-serif;
-  }
-</style>
