@@ -1,17 +1,17 @@
 export const cards = [
   {
     title: "Aerodynamics and Design",
-    desc: "Designed fully in house with the highest detail and refinement. Achieving the maximum downforce without compromising design with aerodynamical elements, which has been done to improve the overall package. These modifications have arrived for the driver to feel the need of aggressiveness, downforce focusing and high speed track behavior.",
+    desc: "Designed fully in house with the highest detail and refinement. Achieving the maximum downforce without compromising design with aerodynamical elements, has been done to improve the overall package. The enormous rear wing generating up to 650Kg of down force, combined with the side spliters and front wheel arch vents, have helped improwed air Flow. The front and rear diffusors create the perfect vacuum for keeping the correct pressure underneath the car. These modifications have arrived for the driver to feel the need of agressivenes, downforce focusing and high speed track behavior.",
     icon: "/svg/wind.svg",
   },
   {
     title: "Suspension, Geometry and Chassis",
-    desc: "The calculations gone into the chassis and suspension have been meticulously revised and tested on the new space frame developed for the GPS and GPC which share the same double wishbone, monotube dampers and space framed chassis. The suspension geometry has been a key factor for high-speed cornering and, together with the F45%-R55% and a 50% L-R weight distribution, has made the GPSeries a brutal track car. A lightweight space frame configuration, to ensure an optimum stiffness and safety where each element in the chassis, has been positioned to give the perfect balance.",
+    desc: "The calculations gone into the chassis and suspension have been meticulously revised and tested on the new space frame developed for the GPS and GPC which share the same double wishbone, monotube dampers and space framed chassis. The suspension geometry has been a key factor for high-speed cornering and together with the 45%F-55%Rand a 50% L-R weight distribution, has made the GPSeries a brutal track car. A lightweight space frame configuration, to ensure an optimum stiffness and safety were each element in the chassis, has been positioned to give the perfect balance.",
     icon: "/svg/compass.svg",
   },
   {
     title: "Powertrains",
-    desc: "Two engine options by Ford, the V6 3.5L Eco boost, offering 500Bhp and 750Bhp. The precision and engineering that has gone into the GPCorsa with it’s 750Bhp engine, is just remarkable. All engine internals have been reengineered to gain the power and torque needed for the demanding needs of our customers. Hours of machining and calibrating race parts has delivered the reliability needed for the most extreme road and track demands. The GPSport and it’s 500Bhp engine, has been revised to give the perfect performance on road, making it also a daily driver for the motorsport enthusiasts. The cooling system has been carefully studied for minimum heat transfer, including a double intercooler package and with single radiator. A 6-speed manual Dog or Sequential gearbox are both available in for both versions.",
+    desc: "Two engine options by Ford , the V6 3.5L Eco boost offering 500Bhp and 750Bhp. The GPC internlas have been reenginered to gain the power and torque needed for the demanding needs of our customers. Hours of machining and calibrating race parts has delivered the reliability needed for the most extreme road and track demands. The GPS and it’s 500Bhp engine, has been revised to give the perfect performance on road and track. The cooling system has been carefully studied for minimum heat transfer including a double intercooler package and a single coolingradiator. A 6-speed manual dog or sequential gearbox are both available for both versions.",
     icon: "/svg/gear.svg",
   },
   {
@@ -21,7 +21,7 @@ export const cards = [
   },
   {
     title: "Interior",
-    desc: "Designed with a track focused vision that includes, high quality finishing and detailing in alcantara and aluminum. All buttons and knobs are CNC machined from aluminum. A Trimmed cockpit with surroundings in alcantara. Race seats and a 4-point harness belt, offers firm occupant support, giving you a GT race car feeling. The seating and pedal position, is designed specifically for each customer. The driver position is extremely important and that’s why at Calandra, it has all been engineered meticulously, thinking in weight distribution and comfort ad the same time.",
+    desc: "All buttons and knobs are CNC machined from aluminium. A Trimmed cockpit fully upholstered in alcantara. Race seats and a 4-point harness belt, offers firm occupant support, giving you a GT race car feeling. The seating and pedal position, is designed specifically for each customer. The driver position is extremely important and that’s why at Calandra, it has all been engineered meticulously, thinking in weight distribution and comfort ad the same time.",
     icon: "/svg/glass.svg",
   },
   {
